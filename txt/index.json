@@ -2,12 +2,12 @@
 	{
 		"Name": "Name 1",
 		"Date": "2012-03-06",
-		"File": "test 1"
+		"File": "test1"
 	},
 
 	{
 		"Name": "Name 2",
 		"Date": "2012-03-05",
-		"File": "test 2"
+		"File": "test2"
 	}
 ]
