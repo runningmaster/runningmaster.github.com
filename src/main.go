@@ -7,9 +7,9 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"html/template"
 	"io/ioutil"
 	"os"
+	"text/template"
 	//"path/filepath"
 	"github.com/russross/blackfriday"
 	"time"
@@ -19,11 +19,17 @@ var (
 	outdir *string = flag.String("out", "./../.out/", "output directory")
 )
 
+func checkError(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
 type post struct {
 	Name string
 	Date string
 	File string
-	Body []byte
+	Body string
 	Indx int
 }
 
@@ -31,67 +37,49 @@ type posts []*post
 
 func (p *posts) initFromFile(filename string) {
 	file, err := ioutil.ReadFile(filename)
-	if err != nil {
-		panic(err)
-	}
-	
-	err = json.Unmarshal(file, p)
-	if err != nil {
-		panic(err)
-	}
+	checkError(err)
+	checkError(json.Unmarshal(file, p))
 }
 
-func createIndexHTML(posts *posts) {
-	file, err := ioutil.ReadFile("./tmp-index.html")
-	if err != nil {
-		panic(err)
-	}
-
-	tmp, err := template.New("index").Parse(string(file))
-	if err != nil {
-		panic(err)
-	}
-
+func applyTemplate(data interface{}) []byte {
+	file, err := ioutil.ReadFile("./dsgn.html")
+	checkError(err)
+	tmp := template.Must(template.New("index").Parse(string(file)))
 	var buf bytes.Buffer
-	err = tmp.Execute(&buf, posts)
-	if err != nil {
-		panic(err)
-	}
-
-	err = ioutil.WriteFile(*outdir+"index.html", buf.Bytes(), os.ModePerm)
-	if err != nil {
-		panic(err)
-	}
+	checkError(tmp.Execute(&buf, data))
+	return buf.Bytes()
 }
 
-func createPostsHTML(post *post) {
-	body, err := ioutil.ReadFile("./../txt/" + post.File + ".md")
-	if err != nil {
-		panic(err)
+func createIndexHTML(p *posts) {
+	d := struct {
+		Index bool
+		Posts *posts
+	}{
+		true,
+		p,
 	}
-	post.Body = blackfriday.MarkdownCommon(body)
-	// process template
-	err = ioutil.WriteFile(*outdir+post.File+".html", post.Body, os.ModePerm)
-	if err != nil {
-		panic(err)
+	checkError(ioutil.WriteFile(*outdir+"index.html", applyTemplate(&d), os.ModePerm))
+}
+
+func createPostsHTML(p *post) {
+	body, err := ioutil.ReadFile("./../txt/" + p.File + ".md")
+	checkError(err)
+	d := struct {
+		Index bool
+		Post  *post
+	}{
+		false,
+		p,
 	}
-	fmt.Println(post.Name)
+	p.Body = string(blackfriday.MarkdownCommon(body))
+	checkError(ioutil.WriteFile(*outdir+p.File+".html", applyTemplate(&d), os.ModePerm))
 }
 
 func goTextToBlog() {
-	err := os.RemoveAll(*outdir)
-	if err != nil {
-		panic(err)
-	}
-	
-	err = os.MkdirAll(*outdir, os.ModePerm)
-	if err != nil {
-		panic(err)
-	}
-
+	checkError(os.RemoveAll(*outdir))
+	checkError(os.MkdirAll(*outdir, os.ModePerm))
 	posts := make(posts, 0)
 	posts.initFromFile("./../txt/index.json")
-
 	l := len(posts)
 	for _, post := range posts {
 		post.Indx = l

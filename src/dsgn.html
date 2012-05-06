@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>runningmaster's githublog {{if not .Index}} : {{.Post.Name}} {{end}}</title>
+  <link rel="stylesheet" href="/dsgn.css" type="text/css" media="screen, projection" />
+  <!--
+  <link href="/favicon.png" rel="icon" />
+  <link rel="stylesheet" type="text/css" href="/css/highlight.css" />
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" />
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" /> 
+  <link rel="alternate" title="githublog FIXME" href="/atom.xml" type="application/atom+xml">
+  -->
+</head>
+
+<body style="margin: 60px 140px 0px 200px;">
+
+  <a href="https://github.com/runningmaster/"><img alt="Fork me on GitHub" style="position: fixed; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"></a>
+
+  <a href="https://runningmaster.github.com/"><img style="position: fixed; right: 25px; bottom: 15px; border: 0;" src="/img/banzai.png"></a>
+
+  <div class="site">
+
+    <div class="menu">
+      <a href="/">блог</a> |
+      <a href="/about/">автор</a>
+    </div>
+
+    <div id="home">
+      
+      {{if .Index}}
+      <div class="title"> Test / Bu-ga-ga
+      </div>
+      <ul class="posts">
+        {{range .Posts}}
+        <li id="post_{{.Indx}}">
+          <span>{{.Date}}</span> 
+          &raquo; 
+          <a href="{{.File}}{{`.html`}}">{{html .Name}}</a>
+        </li>
+        {{end}}
+      </ul>
+      {{else}}
+      <h1>{{html .Post.Name}}</h1>
+      <div id="post">
+        {{.Post.Body}}
+      </div>
+      {{end}}
+      
+      <hr />
+      <div class="footer">
+        <div class="contact">
+          &copy; 2012
+          <a href="mailto:runningmaster@gmail.com">Dmitriy Kovalenko</a> 
+          {{if .Index}}|
+          <a href="/atom.xml" rel="subscribe-rss" title="Подписаться через RSS">RSS</a>
+          {{end}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
