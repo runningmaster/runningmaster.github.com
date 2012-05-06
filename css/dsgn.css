@@ -20,7 +20,7 @@ html, body {
 body {
   background-color: white;
   font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif;
-  margin: 20px 140px 0px 200px;
+  margin: 0px 100px 0px 150px;
   text-align: center;
 }
 
@@ -103,6 +103,7 @@ ul.posts span {
 
 .title {
   color: #a00;
+  /*text-shadow: black 1px 1px 2px, black 0 0 1em;*/
   font-weight: bold;
   margin-bottom: 0.5em;
   margin-top: 0em;
