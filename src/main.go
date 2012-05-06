@@ -16,7 +16,7 @@ import (
 )
 
 var (
-	outdir *string = flag.String("out", "./../.out/", "output directory")
+	outdir *string = flag.String("out", "./../", "output directory")
 )
 
 func checkError(err error) {
@@ -76,8 +76,6 @@ func createPostsHTML(p *post) {
 }
 
 func goTextToBlog() {
-	checkError(os.RemoveAll(*outdir))
-	checkError(os.MkdirAll(*outdir, os.ModePerm))
 	posts := make(posts, 0)
 	posts.initFromFile("./../txt/index.json")
 	l := len(posts)
