@@ -94,7 +94,7 @@ func goTextToBlog() {
 
 func main() {
 	t0 := time.Now()
-	fmt.Println("\nNano simple static blog generator on Golang\nCopyright (c) 2012 by Dmitriy Kovalenko\n")
+	fmt.Println("\nElementary Golang static blog generator\nCopyright (c) 2012 by Dmitriy Kovalenko\n")
 	goTextToBlog()
 	t1 := time.Now()
 	fmt.Printf("Elapsed time %s\n", t1.Sub(t0))
