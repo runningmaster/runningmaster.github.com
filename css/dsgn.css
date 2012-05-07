@@ -20,7 +20,7 @@ html, body {
 body {
   background-color: white;
   font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif;
-  margin: 0px 100px 0px 160px;
+  margin: 0px 100px 0px 120px;
   text-align: center;
 }
 
@@ -204,4 +204,53 @@ ul.posts span {
 
 #post img {
   border: 1px solid #000;
+}
+
+
+/*****************************************************************************/
+/*
+/* Images
+/*
+/*****************************************************************************/
+
+#img_logo {
+  background-image: url(../img/fist.png);
+  position: fixed; 
+  border: 0;
+  top: 16px; 
+  left: 16px; 
+  height: 110px;
+  width: 110px;
+}
+
+#img_fork {
+  background-image: url(https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67);
+  position: fixed; 
+  border: 0;
+  top: 0; 
+  right: 0; 
+  height: 149px;
+  width: 149px;
+}
+
+#img_feed {
+  background-image: url(../img/feed.png);
+  position: fixed;
+  border: 0;
+  border: 0;
+  top: 150px; 
+  left: 55px; 
+  height: 32px;
+  width: 32px;
+}
+
+#img_mail {
+  background-image: url(../img/mail.png);  
+  position: fixed;
+  border: 0;
+  border: 0;
+  top: 200px; 
+  left: 55px; 
+  height: 32px;
+  width: 32px;
 }
