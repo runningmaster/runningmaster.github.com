@@ -5,7 +5,6 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"flag"
 	"fmt"
 	"github.com/russross/blackfriday"
 	"io/ioutil"
@@ -95,7 +94,7 @@ func goTextToBlog() {
 
 func main() {
 	t0 := time.Now()
-	flag.Parse()
+	fmt.Println("Go simple static blog generator  Copyright (c) 2012 by Dmitriy Kovalenko")
 	goTextToBlog()
 	t1 := time.Now()
 	fmt.Printf("Elapsed time %s\n", t1.Sub(t0))
