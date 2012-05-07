@@ -22,17 +22,18 @@
   <div class="site">
 
     <div class="menu">
-      <a href="/">блог</a> |
-      <!--
-      <a href="/about/">автор</a>
-      -->
+      <a href="/">home</a> <!--|
+      <a href="/">about</a> -->
     </div>
 
     <div id="home">
       
       {{if .Index}}
-      <div class="title"> Этот сайт сгенерирован кодом на языке Go
+
+      <div class="title"> 
+      Этот сайт сгенерирован кодом на языке Go
       </div>
+      
       <ul class="posts">
         {{range .Posts}}
         <li id="post_{{.Indx}}">
@@ -42,11 +43,18 @@
         </li>
         {{end}}
       </ul>
+
       {{else}}
+
+      <div class="title"> 
+      {{.Post.Date}}
+      </div>
+
       <h1>{{html .Post.Name}}</h1>
       <div id="post">
         {{.Post.Body}}
       </div>
+
       {{end}}
       <!--
       <hr />
@@ -54,10 +62,8 @@
       <div class="footer">
         <div class="contact">
           &copy; 2012
-          <a href="mailto:runningmaster@gmail.com">Dmitriy Kovalenko</a> |
-          <!--
-          <a href="/atom.xml" rel="subscribe-rss" title="Подписаться через RSS">RSS</a>
-          -->
+          <a href="mailto:runningmaster@gmail.com">Dmitriy Kovalenko</a> <!--|
+          <a href="/atom.xml" rel="subscribe-rss" title="Подписаться через RSS">RSS</a>-->
         </div>
       </div>
 
