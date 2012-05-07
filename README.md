@@ -1,13 +1,10 @@
 Элементарный статический генератор блога
 ========================================
 
-Написан на [Golang][1] для ознакомления с новым языком, 
-на основе идей подсмотренных [здесь][2] и [здесь][3] 
-(позаимствован дизайн).
+Написан на языке [Go][1] для ознакомления с оным, 
+на основе идей подсмотренных [здесь][2] и [здесь][3]. 
 
-[1]: http://golang.org/
-[2]: http://klen.github.com/github-blog-ru.html
-[3]: http://demin.ws/blog/russian/2012/04/17/static-blog-engine-goblog/
+[Дизайн][0] позаимствован из блога [Александра Демина][7].
 
 Основной замысел боя
 --------------------
@@ -20,6 +17,12 @@
 
 Корень проекта и есть корень сайта. [Подробнее][6].
 
+
+[0]: http://runningmaster.github.com/
+[1]: http://golang.org/
+[2]: http://klen.github.com/github-blog-ru.html
+[3]: http://demin.ws/blog/russian/2012/04/17/static-blog-engine-goblog/
 [4]: http://ru.wikipedia.org/wiki/Markdown
 [5]: https://github.com/russross/blackfriday
 [6]: http://help.github.com/pages/
+[7]: http://demin.ws/about/
