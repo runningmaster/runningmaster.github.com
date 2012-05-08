@@ -10,7 +10,9 @@
 
 Результатом **доволен**. Теперь все стало значительно проще, чем когда тоже самое делал при помощи [Pelican][1]. На досуге портирую старые тексты сюда.
 
-Подробности реализации зафиксированы [здесь][5]. Генерация RSS и возможность оставлять [комментарии][6] к текстам скоро будет.
+[README][5] 
+
+[TODO][6]
 
 [0]: http://golang.org/
 [1]:http://www.sublimetext.com/2
@@ -18,4 +20,4 @@
 [3]: http://git-scm.com/
 [4]: http://pelican.notmyidea.org/
 [5]: https://github.com/runningmaster/runningmaster.github.com/blob/master/README.md
-[6]: http://disqus.com/
+[6]: https://github.com/runningmaster/runningmaster.github.com/blob/master/TODO
