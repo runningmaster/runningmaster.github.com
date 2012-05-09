@@ -15,11 +15,12 @@ import (
 )
 
 const (
-	site = "runningmaster's githublog"
-	host = "http://runningmaster.github.com"
-	ghub = "http://github.com/runningmaster"
-	name = "Dmitriy Kovalenko"
-	mail = "runningmaster@gmail.com"
+	site = "runningmaster's githublog"       // Site name
+	host = "http://runningmaster.github.com" // Site address
+	ghub = "http://github.com/runningmaster" // Github location
+	dqus = "runningmastersgithublog"         // Disqus forum shortname
+	name = "Dmitriy Kovalenko"               // Author name
+	mail = "runningmaster@gmail.com"         // Author mail
 )
 
 var (
@@ -40,6 +41,16 @@ type Post struct {
 	File string
 	Body string
 	Indx int
+}
+
+// DISQUS
+// JavaScript configuration variables
+// http://docs.disqus.com/help/2/
+type Dqus struct {
+	Name string // disqus_shortname
+	Test int    // disqus_developer
+	Post string // disqus_identifier
+	Addr string // disqus_url
 }
 
 type Posts []*Post
@@ -114,6 +125,7 @@ func createPostPage(post *Post) {
 		Mail  string
 		Index bool
 		Post  *Post
+		Dqus  *Dqus
 	}{
 		site,
 		host,
@@ -122,6 +134,7 @@ func createPostPage(post *Post) {
 		mail,
 		false,
 		post,
+		&Dqus{dqus, 1, post.File, fmt.Sprintf("%s/%s.html", host, post.File)},
 	}
 	post.Body = string(blackfriday.MarkdownCommon(body))
 	err = ioutil.WriteFile(filepath.Join(out, post.File+".html"), applyTemplate("dsgn.html", &d), os.ModePerm)
