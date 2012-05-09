@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>{{.Site}}</title>
+<link href="{{.Host}}/feed.xml"/>
+<updated>{{.Date}}</updated>
+<author>
+	<name>{{.Name}}</name>
+	<name>{{.Mail}}</name>
+</author>
+<id>{{.Host}}/</id>
+
+{{$Host := .Host}}
+{{range .Posts}}
+<entry>
+	<title>{{.Name}}</title>
+	<link href="{{$Host}}/{{.File}}{{`.html`}}"/>
+	<id>{{$Host}}/{{.File}}</id>
+	<updated>{{.Date}}T00:00:00</updated>
+	<content type="html"><![CDATA[{{.Body}}]]></content>
+</entry>
+{{end}}
+
+</feed>

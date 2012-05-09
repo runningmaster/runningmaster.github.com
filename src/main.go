@@ -1,4 +1,4 @@
-// Copyright 2012 Dmitriy Kovalenko (runningmaster.gmail.com). All rights reserved.
+// Copyright 2012 Dmitriy Kovalenko (runningmaster@gmail.com). All rights reserved.
 
 package main
 
@@ -12,6 +12,14 @@ import (
 	"path/filepath"
 	"text/template"
 	"time"
+)
+
+const (
+	site = "runningmaster's githublog"
+	host = "http://runningmaster.github.com"
+	ghub = "http://github.com/runningmaster"
+	name = "Dmitriy Kovalenko"
+	mail = "runningmaster@gmail.com"
 )
 
 var (
@@ -43,8 +51,8 @@ func (p *Posts) initFromFile(filename string) {
 	checkError(err)
 }
 
-func applyTemplate(data interface{}) []byte {
-	file, err := ioutil.ReadFile("dsgn.html")
+func applyTemplate(filename string, data interface{}) []byte {
+	file, err := ioutil.ReadFile(filename)
 	checkError(err)
 	tmp := template.Must(template.New("index").Parse(string(file)))
 	var buf bytes.Buffer
@@ -53,30 +61,70 @@ func applyTemplate(data interface{}) []byte {
 	return buf.Bytes()
 }
 
-func createIndexHTML(posts *Posts) {
+func createAtomFeed(posts *Posts) {
 	d := struct {
-		Index bool
+		Site  string
+		Host  string
+		Name  string
+		Mail  string
+		Date  string
 		Posts *Posts
 	}{
-		true,
+		site,
+		host,
+		name,
+		mail,
+		time.Now().Format(time.RFC3339),
 		posts,
 	}
-	err := ioutil.WriteFile(filepath.Join(out, "index.html"), applyTemplate(&d), os.ModePerm)
+	err := ioutil.WriteFile(filepath.Join(out, "feed.xml"), applyTemplate("atom.xml", &d), os.ModePerm)
 	checkError(err)
 }
 
-func createPostsHTML(post *Post) {
+func createHomePage(posts *Posts) {
+	d := struct {
+		Site  string
+		Host  string
+		Ghub  string
+		Name  string
+		Mail  string
+		Index bool
+		Posts *Posts
+	}{
+		site,
+		host,
+		ghub,
+		name,
+		mail,
+		true,
+		posts,
+	}
+	err := ioutil.WriteFile(filepath.Join(out, "index.html"), applyTemplate("dsgn.html", &d), os.ModePerm)
+	checkError(err)
+}
+
+func createPostPage(post *Post) {
 	body, err := ioutil.ReadFile(filepath.Join(txt, post.File+".md"))
 	checkError(err)
 	d := struct {
+		Site  string
+		Host  string
+		Ghub  string
+		Name  string
+		Mail  string
 		Index bool
 		Post  *Post
 	}{
+		site,
+		host,
+		ghub,
+		name,
+		mail,
 		false,
 		post,
 	}
 	post.Body = string(blackfriday.MarkdownCommon(body))
-	err = ioutil.WriteFile(filepath.Join(out, post.File+".html"), applyTemplate(&d), os.ModePerm)
+	err = ioutil.WriteFile(filepath.Join(out, post.File+".html"), applyTemplate("dsgn.html", &d), os.ModePerm)
 	checkError(err)
 }
 
@@ -87,9 +135,10 @@ func goTextToBlog() {
 	for _, post := range posts {
 		post.Indx = l
 		l--
-		createPostsHTML(post)
+		createPostPage(post)
 	}
-	createIndexHTML(&posts)
+	createAtomFeed(&posts)
+	createHomePage(&posts)
 }
 
 func main() {
