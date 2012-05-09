@@ -1,5 +1,11 @@
 [
 	{
+		"Name": "Альтернатива Django|Rails на Go",
+		"Date": "2012-05-09",
+		"File": "go-start"
+	},
+
+	{
 		"Name": "Полезные ссылки для изучения Go",
 		"Date": "2012-05-08",
 		"File": "go-links"

@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-05-09T14:06:35+03:00</updated>
+<updated>2012-05-09T23:09:55+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -11,6 +11,23 @@
 <id>http://runningmaster.github.com/</id>
 
 
+
+<entry>
+	<title>Альтернатива Django|Rails на Go</title>
+	<link href="http://runningmaster.github.com/go-start.html"/>
+	<id>http://runningmaster.github.com/go-start</id>
+	<updated>2012-05-09T00:00:00</updated>
+	<content type="html"><![CDATA[<p>Намедни открыл для себя один занимательный проект - высокоуровневый веб-фреймворк <a href="https://github.com/ungerik/go-start">Go-start</a>, который позиционируется как аналог <a href="http://ru.wikipedia.org/wiki/Django">Django для Python</a> или <a href="http://ru.wikipedia.org/wiki/Ruby_on_Rails">Rails для Ruby</a>, но только написан на <a href="http://golang.org/">Go</a> и имеет в некоторой степени отличную от первых <a href="https://github.com/ungerik/go-start/blob/master/README.md">философию</a>.</p>
+
+<p>Фреймворк имеет спонсора и <strong>очень активно развивается</strong>, разгоняя ветер перемен базой данных <a href="http://ru.wikipedia.org/wiki/MongoDB">MongoDB</a>, которая используется по умолчанию.</p>
+
+<ul>
+<li><a href="http://startuplive.in/">Вот</a> сайт первый сайт на посмотреть.</li>
+<li><a href="http://speakerdeck.com/u/ungerik/p/the-go-start-webframework">Вот</a> слайды презентации.</li>
+<li><a href="http://vimeo.com/39348998">Вот</a> видео презентации.</li>
+</ul>
+]]></content>
+</entry>
 
 <entry>
 	<title>Полезные ссылки для изучения Go</title>
