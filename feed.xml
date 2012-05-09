@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-05-09T23:09:55+03:00</updated>
+<updated>2012-05-10T00:52:26+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -22,7 +22,7 @@
 <p>Фреймворк имеет спонсора и <strong>очень активно развивается</strong>, разгоняя ветер перемен базой данных <a href="http://ru.wikipedia.org/wiki/MongoDB">MongoDB</a>, которая используется по умолчанию.</p>
 
 <ul>
-<li><a href="http://startuplive.in/">Вот</a> сайт первый сайт на посмотреть.</li>
+<li><a href="http://startuplive.in/">Вот</a> пример сделанного сайта на посмотреть.</li>
 <li><a href="http://speakerdeck.com/u/ungerik/p/the-go-start-webframework">Вот</a> слайды презентации.</li>
 <li><a href="http://vimeo.com/39348998">Вот</a> видео презентации.</li>
 </ul>
