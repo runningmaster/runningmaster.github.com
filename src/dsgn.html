@@ -31,8 +31,9 @@
 	<a href="mailto:{{.Mail}}" title="Mail" id="img_mail"></a>
  	<div class="site">
 		<div class="menu">
-			<a href=".">home</a> <!--|
-			<a href="/">about</a> -->
+			<a href=".">home</a> | 
+			<a href="./ubuntu.html">ubuntu</a> | 
+			<a href="./about.html">about</a>
 		</div>
 		<div id="home">
 			{{if .Index}}
@@ -40,22 +41,23 @@
 				Простое лучше, чем сложное / Сложное лучше, чем запутанное. 
 			</div>
 			<ul class="posts">
-				{{range .Posts}}
+				{{range .Posts}}{{if .Date}}
 				<li id="post_{{.Indx}}">
 					<span>{{.Date}}</span> 
 					&raquo; 
 					<a href="{{.File}}{{`.html`}}">{{html .Name}}</a>
 				</li>
-				{{end}}
+				{{end}}{{end}}
 			</ul>
 			{{else}}
 			<div class="title"> 
-				{{.Post.Date}}
+				{{if .Post.Date}}{{.Post.Date}}{{else}}page{{end}}
 			</div>
 			<h1>{{html .Post.Name}}</h1>
 			<div id="post">
 				{{.Post.Body}}
 			</div>
+			{{if .Post.Date}}
 			<h1>Комментарии</h1>
 			<div id="disqus_thread"></div>
 			<div id="disqus_thread"></div>
@@ -74,11 +76,11 @@
 			<div class="post_footer">
 				<a href="http://disqus.com">Powered by Disqus</a>
 			</div>
-			{{end}}
+			{{end}}{{end}}
 			<div class="footer">
 				<div class="contact">
 					&copy; 2012
-					<a href="mailto:{{.Mail}}" title="Написать письмо">{{.Name}}</a> | <a href="/feed.xml" rel="subscribe-rss" title="Подписаться через RSS">RSS</a> | <a href="{{.Ghub}}/runningmaster.github.com/blob/master/src/main.go" title="Посмотреть код">Made on Go</a> |
+					<a href="mailto:{{.Mail}}" title="Написать письмо">{{.Name}}</a> | <a href="/feed.xml" rel="subscribe-rss" title="Подписаться через RSS">RSS</a> | <a href="{{.Ghub}}/runningmaster.github.com/blob/master/src/main.go" title="Посмотреть код">Made on Go</a>
 				</div>
 			</div>
 

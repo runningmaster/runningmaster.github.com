@@ -11,7 +11,7 @@
 <id>{{.Host}}/</id>
 
 {{$Host := .Host}}
-{{range .Posts}}
+{{range .Posts}}{{if .Date}}
 <entry>
 	<title>{{.Name}}</title>
 	<link href="{{$Host}}/{{.File}}{{`.html`}}"/>
@@ -19,6 +19,6 @@
 	<updated>{{.Date}}T00:00:00</updated>
 	<content type="html"><![CDATA[{{.Body}}]]></content>
 </entry>
-{{end}}
+{{end}}{{end}}
 
 </feed>
