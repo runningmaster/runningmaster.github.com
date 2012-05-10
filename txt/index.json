@@ -15,5 +15,15 @@
 		"Name": "Элементарный генератор блога на Go",
 		"Date": "2012-05-08",
 		"File": "go-blog"
+	},
+
+	{
+		"Name": "Об авторе",
+		"File": "about"
+	},
+
+	{
+		"Name": "Ubuntu",
+		"File": "ubuntu"
 	}
 ]
