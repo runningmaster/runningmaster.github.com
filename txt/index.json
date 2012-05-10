@@ -25,5 +25,10 @@
 	{
 		"Name": "Ubuntu",
 		"File": "ubuntu"
+	},
+
+	{
+		"Name": "Highlight Code (Test)",
+		"File": "highlight"
 	}
 ]
