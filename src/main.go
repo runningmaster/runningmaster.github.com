@@ -137,6 +137,7 @@ func createPostPage(post *Post) {
 		&Dqus{dqus, 0, post.File, fmt.Sprintf("%s/%s.html", host, post.File)},
 	}
 	post.Body = string(blackfriday.MarkdownCommon(body))
+	// highlight(post.Body)
 	err = ioutil.WriteFile(filepath.Join(out, post.File+".html"), applyTemplate("dsgn.html", &d), os.ModePerm)
 	checkError(err)
 }
