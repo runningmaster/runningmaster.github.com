@@ -29,12 +29,6 @@ var (
 	txt string
 )
 
-func checkError(err error) {
-	if err != nil {
-		panic(err)
-	}
-}
-
 type Post struct {
 	Name string
 	Date string
@@ -57,18 +51,29 @@ type Posts []*Post
 
 func (p *Posts) initFromFile(filename string) {
 	file, err := ioutil.ReadFile(filename)
-	checkError(err)
+	if err != nil {
+		panic(err)
+	}
+
 	err = json.Unmarshal(file, p)
-	checkError(err)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func applyTemplate(filename string, data interface{}) []byte {
 	file, err := ioutil.ReadFile(filename)
-	checkError(err)
+	if err != nil {
+		panic(err)
+	}
+
 	tmp := template.Must(template.New("index").Parse(string(file)))
+
 	var buf bytes.Buffer
 	err = tmp.Execute(&buf, data)
-	checkError(err)
+	if err != nil {
+		panic(err)
+	}
 	return buf.Bytes()
 }
 
@@ -88,8 +93,11 @@ func createAtomFeed(posts *Posts) {
 		time.Now().Format(time.RFC3339),
 		posts,
 	}
+
 	err := ioutil.WriteFile(filepath.Join(out, "feed.xml"), applyTemplate("atom.xml", &d), os.ModePerm)
-	checkError(err)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func createHomePage(posts *Posts) {
@@ -110,13 +118,19 @@ func createHomePage(posts *Posts) {
 		true,
 		posts,
 	}
+
 	err := ioutil.WriteFile(filepath.Join(out, "index.html"), applyTemplate("dsgn.html", &d), os.ModePerm)
-	checkError(err)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func createPostPage(post *Post) {
 	body, err := ioutil.ReadFile(filepath.Join(txt, post.File+".md"))
-	checkError(err)
+	if err != nil {
+		panic(err)
+	}
+
 	d := struct {
 		Site  string
 		Host  string
@@ -136,21 +150,27 @@ func createPostPage(post *Post) {
 		post,
 		&Dqus{dqus, 0, post.File, fmt.Sprintf("%s/%s.html", host, post.File)},
 	}
+
 	post.Body = string(blackfriday.MarkdownCommon(body))
 	// highlight(post.Body)
+
 	err = ioutil.WriteFile(filepath.Join(out, post.File+".html"), applyTemplate("dsgn.html", &d), os.ModePerm)
-	checkError(err)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func goTextToBlog() {
 	posts := make(Posts, 0)
 	posts.initFromFile(filepath.Join(txt, "index.json"))
+
 	l := len(posts)
 	for _, post := range posts {
 		post.Indx = l
 		l--
 		createPostPage(post)
 	}
+
 	createAtomFeed(&posts)
 	createHomePage(&posts)
 }
@@ -158,7 +178,9 @@ func goTextToBlog() {
 func main() {
 	t0 := time.Now()
 	fmt.Println("\nElementary static blog generator\nCopyright (c) 2012 by Dmitriy Kovalenko\n")
+
 	goTextToBlog()
+
 	t1 := time.Now()
 	fmt.Printf("Elapsed time %s\n", t1.Sub(t0))
 }
