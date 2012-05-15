@@ -29,6 +29,12 @@ var (
 	txt string
 )
 
+func panicIfError(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
 type Post struct {
 	Name string
 	Date string
@@ -51,29 +57,21 @@ type Posts []*Post
 
 func (p *Posts) initFromFile(filename string) {
 	file, err := ioutil.ReadFile(filename)
-	if err != nil {
-		panic(err)
-	}
+	panicIfError(err)
 
 	err = json.Unmarshal(file, p)
-	if err != nil {
-		panic(err)
-	}
+	panicIfError(err)
 }
 
 func applyTemplate(filename string, data interface{}) []byte {
 	file, err := ioutil.ReadFile(filename)
-	if err != nil {
-		panic(err)
-	}
+	panicIfError(err)
 
 	tmp := template.Must(template.New("index").Parse(string(file)))
 
 	var buf bytes.Buffer
 	err = tmp.Execute(&buf, data)
-	if err != nil {
-		panic(err)
-	}
+	panicIfError(err)
 	return buf.Bytes()
 }
 
@@ -95,9 +93,7 @@ func createAtomFeed(posts *Posts) {
 	}
 
 	err := ioutil.WriteFile(filepath.Join(out, "feed.xml"), applyTemplate("atom.xml", &d), os.ModePerm)
-	if err != nil {
-		panic(err)
-	}
+	panicIfError(err)
 }
 
 func createHomePage(posts *Posts) {
@@ -120,16 +116,12 @@ func createHomePage(posts *Posts) {
 	}
 
 	err := ioutil.WriteFile(filepath.Join(out, "index.html"), applyTemplate("dsgn.html", &d), os.ModePerm)
-	if err != nil {
-		panic(err)
-	}
+	panicIfError(err)
 }
 
 func createPostPage(post *Post) {
 	body, err := ioutil.ReadFile(filepath.Join(txt, post.File+".md"))
-	if err != nil {
-		panic(err)
-	}
+	panicIfError(err)
 
 	d := struct {
 		Site  string
@@ -155,9 +147,7 @@ func createPostPage(post *Post) {
 	// highlight(post.Body)
 
 	err = ioutil.WriteFile(filepath.Join(out, post.File+".html"), applyTemplate("dsgn.html", &d), os.ModePerm)
-	if err != nil {
-		panic(err)
-	}
+	panicIfError(err)
 }
 
 func goTextToBlog() {
