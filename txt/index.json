@@ -30,5 +30,10 @@
 	{
 		"Name": "Highlight Code (Test)",
 		"File": "highlight"
+	},
+
+	{
+		"Name": "Morion Web Services API (Draft)",
+		"File": "mws-api"
 	}
 ]
