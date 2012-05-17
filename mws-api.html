@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+ 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ 	<title>runningmaster's githublog : Morion Web Services API (Draft)</title>
+ 	<link rel="stylesheet" href="./src/dsgn.css" type="text/css" media="screen, projection" />
+ 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" />
+ 	<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" />
+ 	<link href="/img/favicon.png" rel="icon" />
+ 	<link rel="alternate" title="runningmaster's githublog" href="/feed.xml" type="application/atom+xml">
+ 	<!--
+ 	<link rel="stylesheet" type="text/css" href="/css/highlight.css" />
+ 	-->
+ 	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31528830-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>  
+</head>
+
+<body>
+	<a href="http://runningmaster.github.com/" title="Home" id="img_logo"></a>
+	<a href="http://github.com/runningmaster/" title="Fork me on GitHub" id="img_fork"></a>
+	<a href="/feed.xml" title="Feed" id="img_feed"></a>
+	<a href="mailto:runningmaster@gmail.com" title="Mail" id="img_mail"></a>
+ 	<div class="site">
+		<div class="menu">
+			<a href=".">home</a> | 
+			<a href="./ubuntu.html">ubuntu</a> | 
+			<a href="./about.html">about</a>
+		</div>
+		<div id="home">
+			
+			<div class="title"> 
+				page
+			</div>
+			<h1>Morion Web Services API (Draft)</h1>
+			<div id="post">
+				<h2>Соглашения</h2>
+
+<ol>
+<li><p>API определяется следующим общим форматом:</p>
+
+<pre><code>http://api.{domain}/{version}/{aspect}/{action}
+</code></pre></li>
+
+<li><p>API реализуется двумя HTTP методами:</p>
+
+<ul>
+<li><code>GET</code> - для получения данных из сервиса</li>
+<li><code>POST</code> - для передачи данных в сервис</li>
+</ul></li>
+
+<li><p>API предпочитает формат данных <code>application/json</code> (см. <a href="http://json.org/">JSON</a>), в специальных же случаях может быть оговорен другой тип (см. <a href="http://en.wikipedia.org/wiki/Mime_type">Content-Type</a>), например, <code>text/csv</code> для исторической поддержки определенного вида информации.</p></li>
+</ol>
+
+<h2>Linkdroid API</h2>
+
+<p>Облачный сервис распознавания входящих данных различного типа в реальном режиме времени. Нераспознанные названия отсылает в сервис экспертной системы для последующей их привязки к значениям ключей эталонных справочников. Распознанные названия вместе с их атрибутами отсылает для последующей обработки в соотвествующие сервисы.</p>
+
+<ul>
+<li><p><strong>Получение кодов типов данных и их форматов</strong>: <code>incoming/help</code></p>
+
+<p>Отдает коды типов данных в виде первых восьми символов SHA-1 кода строковых констант - кодовых имен этих типов (задается разработчиком), вместе со ссылкой на пример их демонстрационной стуктуры.</p>
+
+<p><code>GET</code> <code>http://api.morion.ua/1/incoming/help</code></p>
+
+<pre><code>[
+    {
+        &quot;type&quot;: &quot;720fc5af&quot;,
+        &quot;desc&quot;: &quot;Аптечный чек&quot;,
+        &quot;meta&quot;: &quot;http://api.morion.ua/1/incoming/720fc5af/help&quot;
+    },
+
+
+    {
+        &quot;type&quot;: &quot;1a383386&quot;,
+        &quot;desc&quot;: &quot;Оптовый прайс лист&quot;,
+        &quot;meta&quot;: &quot;http://api.morion.ua/1/incoming/1a383386/help&quot;
+    },
+]
+</code></pre>
+
+<p><code>GET</code> <code>http://api.morion.ua/1/incoming/720fc5af/help</code></p>
+
+<pre><code>{
+    &quot;id&quot;: number,                            //  description here
+    &quot;name&quot;: [&quot;string&quot;, &quot;string&quot;, &quot;string&quot;],  //  description here
+    &quot;price&quot;: [float, float, float]           //  description here
+}
+</code></pre></li>
+
+<li><p><strong>Прием данных по их типу:</strong> <code>incoming/:type/add</code></p>
+
+<p>Принимает данные, их формат и логика последующей обработки зависит от типа <code>:type</code>.</p>
+
+<p><code>720fc5af</code> - например, чек из аптеки</p>
+
+<p><code>POST</code> <code>http://api.morion.ua/1/incoming/720fc5af/add</code></p>
+
+<pre><code>{
+    &quot;id&quot;: 403,
+    &quot;name&quot;: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;],
+    &quot;price&quot;: [0.5, 1.25, 3.50]
+}
+</code></pre>
+
+<p><code>1a383386</code> - что-то еще, например прайс-лист в <code>csv</code>.</p>
+
+<p><code>POST</code> <code>http://api.morion.ua/1/incoming/1a383386/add</code></p>
+
+<pre><code>&quot;value&quot;;&quot;value&quot;;&quot;value&quot;;
+&quot;value&quot;;&quot;value&quot;;&quot;value&quot;;
+&quot;value&quot;;&quot;value&quot;;&quot;value&quot;;
+&quot;value&quot;;&quot;value&quot;;&quot;value&quot;;
+</code></pre></li>
+
+<li><p><strong>Создание ссылки:</strong> <code>link/create</code></p>
+
+<p>Присваивает контрольной сумме <code>sha</code> ссылку на новое значение эталонного ключа <code>new</code>.</p>
+
+<p><code>POST</code> <code>http://api.morion.ua/1/link/create</code></p>
+
+<pre><code>{
+    &quot;sha&quot;: &quot;7c0e9591ff9b00f397718a63ae17370c566d4ca8&quot;,  // контрольная сумма (string) 
+    &quot;new&quot;: 5577006791947779410                          // новое значение ключа (Int64)
+}
+</code></pre></li>
+
+<li><p><strong>Переназначение ссылки:</strong> <code>link/update</code></p>
+
+<p>Обновляет все ссылки эталонного ключа <code>old</code> на его новое значение <code>new</code>.</p>
+
+<p><code>POST</code> <code>http://api.morion.ua/1/link/update</code></p>
+
+<pre><code>{
+    &quot;old&quot;: 5577006791947779410,  // предыдущее значение (Int64)
+    &quot;new&quot;: 4039410712379194777   // новое значение (Int64)
+}
+</code></pre></li>
+
+<li><p><strong>Удаление ссылки:</strong> <code>link/delete</code></p>
+
+<p>Удаляет все ссылки на эталонный ключ <code>old</code>.</p>
+
+<p><code>POST</code> <code>http://api.morion.ua/1/link/delete</code></p>
+
+<pre><code>{
+    &quot;old&quot;: 4039410712379194777  // текущее значение (Int64)
+}
+</code></pre></li>
+</ul>
+
+			</div>
+			
+			<div class="footer">
+				<div class="contact">
+					&copy; 2012
+					<a href="mailto:runningmaster@gmail.com" title="Написать письмо">Dmitriy Kovalenko</a> | <a href="/feed.xml" rel="subscribe-rss" title="Подписаться через RSS">RSS</a> | <a href="http://github.com/runningmaster/runningmaster.github.com/blob/master/src/main.go" title="Посмотреть код">Made on Go</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>
