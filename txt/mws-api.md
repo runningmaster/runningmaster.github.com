@@ -78,7 +78,7 @@ Linkdroid API
 	Content-Type: application/json
 	
 	{
-		"sha": "7c0e9591ff9b00f397718a63ae17370c566d4ca8"
+		"sha": "7c0e9591ff9b00f397718a63ae17370c566d4ca8",
 		"new": 5577006791947779410
 	}
 	```
@@ -92,7 +92,7 @@ Linkdroid API
 	Content-Type: application/json
 
 	{
-		"sha": "15ca051d88fec9a4fd6eb39e99b1148eb2d7e3a6"
+		"sha": "15ca051d88fec9a4fd6eb39e99b1148eb2d7e3a6",
 		"new": 6791947557700779410
 	}
 	```
@@ -119,7 +119,7 @@ Linkdroid API
 	Content-Type: application/json
 
 	{
-		"old": 5577006791947779410
+		"old": 5577006791947779410,
 		"new": 4039410712379194777
 	}
 	```
