@@ -71,117 +71,115 @@
 
 <p><code>720fc5af</code> - например, чек из аптеки в <code>json</code>:</p>
 
-<pre><code>URL: http://api.morion.ua/1/incoming/add?type=720fc5af
-Method: POST
+<pre><code>POST http://api.morion.ua/1/incoming/add?type=720fc5af HTTP/1.1
 Content-Type: application/json
-Body:
-    {
-        &quot;id&quot;: 403,
-        &quot;name&quot;: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;],
-        &quot;price&quot;: [0.5, 1.25, 3.50]
-    }
+
+
+{
+    &quot;id&quot;: 403,
+    &quot;name&quot;: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;],
+    &quot;price&quot;: [0.5, 1.25, 3.50]
+}
 </code></pre>
 
 <p><code>1a383386</code> - что-то еще, например прайс-лист в <code>csv</code>:</p>
 
-<pre><code>URL: http://api.morion.ua/1/incoming/add?type=1a383386
-Method: POST
+<pre><code>POST http://api.morion.ua/1/incoming/add?type=1a383386 HTTP/1.1
 Content-Type: text/csv
-Body:
-    blah;blah;blah;blah;blah;
-    blah;blah;blah;blah;blah;
-    blah;blah;blah;blah;blah;
-    blah;blah;blah;blah;blah;
-    blah;blah;blah;blah;blah;
+
+
+blah;blah;blah;blah;blah;
+blah;blah;blah;blah;blah;
+blah;blah;blah;blah;blah;
+blah;blah;blah;blah;blah;
+blah;blah;blah;blah;blah;
 </code></pre>
 
 <p><code>e17370c5</code> - или же можно принимать<code>xmmo</code>:</p>
 
-<pre><code>URL: http://api.morion.ua/1/incoming/add?type=e17370c5
-Method: POST
+<pre><code>POST http://api.morion.ua/1/incoming/add?type=e17370c5 HTTP/1.1
 Content-Type: text/xml
-Body:
-    &lt;?xml version=&quot;1.0&quot;?&gt;
-    &lt;ElOrder&gt; 
-        &lt;Document DocType=&quot;РасходнаяНакладная&quot; Version=&quot;1&quot; DivType=&quot; Простые &quot;&gt;
-            &lt;Header&gt; 
-            &lt;/Header&gt; 
-            &lt;Body&gt;
-                &lt;Items&gt;
-                &lt;/Items&gt;
-            &lt;/Body&gt; 
-        &lt;/Document&gt; 
-    &lt;/ElOrder&gt; 
+
+
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;ElOrder&gt; 
+    &lt;Document DocType=&quot;РасходнаяНакладная&quot; Version=&quot;1&quot; DivType=&quot; Простые &quot;&gt;
+        &lt;Header&gt; 
+        &lt;/Header&gt; 
+        &lt;Body&gt;
+            &lt;Items&gt;
+            &lt;/Items&gt;
+        &lt;/Body&gt; 
+    &lt;/Document&gt; 
+&lt;/ElOrder&gt; 
 </code></pre></li>
 
 <li><p><strong>Создание ссылки:</strong> <code>link/create</code></p>
 
 <p>Присваивает контрольной сумме <code>sha</code> (string) ссылку на новое значение эталонного ключа <code>new</code> (Int64):</p>
 
-<pre><code>URL: http://api.morion.ua/1/link/create
-Method: POST
+<pre><code>POST http://api.morion.ua/1/link/create HTTP/1.1
 Content-Type: application/json
-Body:
-    {
-        &quot;sha&quot;: &quot;7c0e9591ff9b00f397718a63ae17370c566d4ca8&quot;
-        &quot;new&quot;: 5577006791947779410
-    }
+
+
+{
+    &quot;sha&quot;: &quot;7c0e9591ff9b00f397718a63ae17370c566d4ca8&quot;
+    &quot;new&quot;: 5577006791947779410
+}
 </code></pre></li>
 
 <li><p><strong>Обновление ссылки:</strong> <code>link/update</code></p>
 
 <p>Обновляет для контрольной суммы <code>sha</code> (string) ссылку на новое значение эталонного ключа <code>new</code> (Int64):</p>
 
-<pre><code>URL: http://api.morion.ua/1/link/update
-Method: POST
+<pre><code>POST http://api.morion.ua/1/link/update HTTP/1.1
 Content-Type: application/json
-Body:
-    {
-        &quot;sha&quot;: &quot;15ca051d88fec9a4fd6eb39e99b1148eb2d7e3a6&quot;
-        &quot;new&quot;: 6791947557700779410
-    }
+
+
+{
+    &quot;sha&quot;: &quot;15ca051d88fec9a4fd6eb39e99b1148eb2d7e3a6&quot;
+    &quot;new&quot;: 6791947557700779410
+}
 </code></pre></li>
 
 <li><p><strong>Удаление ссылки:</strong> <code>link/delete</code></p>
 
 <p>Удаляет ссылку для контрольной суммы <code>sha</code> (string):</p>
 
-<pre><code>URL: http://api.morion.ua/1/link/delete
-Method: POST
+<pre><code>POST http://api.morion.ua/1/link/delete HTTP/1.1
 Content-Type: application/json
-Body:
-    {
-        &quot;sha&quot;: &quot;97c01ac379ab5c9019a2fff10de32ecb36abae53&quot;
-    }
+
+
+{
+    &quot;sha&quot;: &quot;97c01ac379ab5c9019a2fff10de32ecb36abae53&quot;
+}
 </code></pre></li>
 
 <li><p><strong>Переназначение ссылок:</strong> <code>links/update</code></p>
 
 <p>Обновляет все ссылки на эталонный ключ <code>old</code> (Int64) на его новое значение <code>new</code> (Int64):</p>
 
-<pre><code>URL: http://api.morion.ua/1/links/update
-Method: POST
+<pre><code>POST http://api.morion.ua/1/links/update HTTP/1.1
 Content-Type: application/json
-Body:
-    {
-        &quot;old&quot;: 5577006791947779410
-        &quot;new&quot;: 4039410712379194777
-    }
 
 
+{
+    &quot;old&quot;: 5577006791947779410
+    &quot;new&quot;: 4039410712379194777
+}
 </code></pre></li>
 
 <li><p><strong>Удаление ссылок:</strong> <code>links/delete</code></p>
 
 <p>Удаляет все ссылки на эталонный ключ <code>old</code> (Int64):</p>
 
-<pre><code>URL: http://api.morion.ua/1/links/delete
-Method: POST
+<pre><code>POST http://api.morion.ua/1/links/delete HTTP/1.1
 Content-Type: application/json
-Body:
-    {
-        &quot;old&quot;: 4039410712379194777
-    }
+
+
+{
+    &quot;old&quot;: 4039410712379194777
+}
 </code></pre></li>
 </ul>
 

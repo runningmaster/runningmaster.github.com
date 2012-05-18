@@ -27,49 +27,46 @@ Linkdroid API
 	`720fc5af` - например, чек из аптеки в `json`:
 
 	```
-	URL: http://api.morion.ua/1/incoming/add?type=720fc5af
-	Method: POST
+	POST http://api.morion.ua/1/incoming/add?type=720fc5af HTTP/1.1
 	Content-Type: application/json
-	Body:
-		{
-			"id": 403,
-			"name": ["one", "two", "three"],
-			"price": [0.5, 1.25, 3.50]
-		}
+
+	{
+		"id": 403,
+		"name": ["one", "two", "three"],
+		"price": [0.5, 1.25, 3.50]
+	}
 	```
 
 	`1a383386` - что-то еще, например прайс-лист в `csv`:
 
 	```
-	URL: http://api.morion.ua/1/incoming/add?type=1a383386
-	Method: POST
+	POST http://api.morion.ua/1/incoming/add?type=1a383386 HTTP/1.1
 	Content-Type: text/csv
-	Body:
-		blah;blah;blah;blah;blah;
-		blah;blah;blah;blah;blah;
-		blah;blah;blah;blah;blah;
-		blah;blah;blah;blah;blah;
-		blah;blah;blah;blah;blah;
+
+	blah;blah;blah;blah;blah;
+	blah;blah;blah;blah;blah;
+	blah;blah;blah;blah;blah;
+	blah;blah;blah;blah;blah;
+	blah;blah;blah;blah;blah;
 	```	
 
 	`e17370c5` - или же можно принимать`xmmo`: 
 
 	```
-	URL: http://api.morion.ua/1/incoming/add?type=e17370c5
-	Method: POST
+	POST http://api.morion.ua/1/incoming/add?type=e17370c5 HTTP/1.1
 	Content-Type: text/xml
-	Body:
-		<?xml version="1.0"?>
-		<ElOrder> 
-			<Document DocType="РасходнаяНакладная" Version="1" DivType=" Простые ">
-				<Header> 
-				</Header> 
-				<Body>
-					<Items>
-					</Items>
-				</Body> 
-			</Document> 
-		</ElOrder> 
+
+	<?xml version="1.0"?>
+	<ElOrder> 
+		<Document DocType="РасходнаяНакладная" Version="1" DivType=" Простые ">
+			<Header> 
+			</Header> 
+			<Body>
+				<Items>
+				</Items>
+			</Body> 
+		</Document> 
+	</ElOrder> 
 	```
 
 * **Создание ссылки:** `link/create`
@@ -77,14 +74,13 @@ Linkdroid API
 	Присваивает контрольной сумме `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
 
 	```
-	URL: http://api.morion.ua/1/link/create
-	Method: POST
+	POST http://api.morion.ua/1/link/create HTTP/1.1
 	Content-Type: application/json
-	Body:
-		{
-			"sha": "7c0e9591ff9b00f397718a63ae17370c566d4ca8"
-			"new": 5577006791947779410
-		}
+	
+	{
+		"sha": "7c0e9591ff9b00f397718a63ae17370c566d4ca8"
+		"new": 5577006791947779410
+	}
 	```
 
 * **Обновление ссылки:** `link/update`
@@ -92,14 +88,13 @@ Linkdroid API
 	Обновляет для контрольной суммы `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
 
 	```
-	URL: http://api.morion.ua/1/link/update
-	Method: POST
+	POST http://api.morion.ua/1/link/update HTTP/1.1
 	Content-Type: application/json
-	Body:
-		{
-			"sha": "15ca051d88fec9a4fd6eb39e99b1148eb2d7e3a6"
-			"new": 6791947557700779410
-		}
+
+	{
+		"sha": "15ca051d88fec9a4fd6eb39e99b1148eb2d7e3a6"
+		"new": 6791947557700779410
+	}
 	```
 
 * **Удаление ссылки:** `link/delete`
@@ -107,13 +102,12 @@ Linkdroid API
 	Удаляет ссылку для контрольной суммы `sha` (string):
 
 	```
-	URL: http://api.morion.ua/1/link/delete
-	Method: POST
+	POST http://api.morion.ua/1/link/delete HTTP/1.1
 	Content-Type: application/json
-	Body:
-		{
-			"sha": "97c01ac379ab5c9019a2fff10de32ecb36abae53"
-		}
+
+	{
+		"sha": "97c01ac379ab5c9019a2fff10de32ecb36abae53"
+	}
 	```
 
 * **Переназначение ссылок:** `links/update`
@@ -121,15 +115,13 @@ Linkdroid API
 	Обновляет все ссылки на эталонный ключ `old` (Int64) на его новое значение `new` (Int64):
 
 	```
-	URL: http://api.morion.ua/1/links/update
-	Method: POST
+	POST http://api.morion.ua/1/links/update HTTP/1.1
 	Content-Type: application/json
-	Body:
-		{
-			"old": 5577006791947779410
-			"new": 4039410712379194777
-		}
-		
+
+	{
+		"old": 5577006791947779410
+		"new": 4039410712379194777
+	}
 	```
 
 * **Удаление ссылок:** `links/delete`
@@ -137,11 +129,10 @@ Linkdroid API
 	Удаляет все ссылки на эталонный ключ `old` (Int64):
 
 	```
-	URL: http://api.morion.ua/1/links/delete
-	Method: POST
+	POST http://api.morion.ua/1/links/delete HTTP/1.1
 	Content-Type: application/json
-	Body:
-		{
-			"old": 4039410712379194777
-		}
+
+	{
+		"old": 4039410712379194777
+	}
 	```
