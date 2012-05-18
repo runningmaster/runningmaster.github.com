@@ -20,100 +20,128 @@ Linkdroid API
 
 Облачный сервис распознавания входящих данных различного типа в реальном режиме времени. Нераспознанные названия отсылает в сервис экспертной системы для последующей их привязки к значениям ключей эталонных справочников. Распознанные названия вместе с их атрибутами отсылает для последующей обработки в соотвествующие сервисы.
 
-* **Получение кодов типов данных и их форматов**: `incoming/help`
+* **Прием данных по их типу:** `incoming/add`
 
-	Отдает коды типов данных в виде первых восьми символов SHA-1 кода строковых констант - кодовых имен этих типов (задается разработчиком), вместе со ссылкой на пример их демонстрационной стуктуры.
+	Принимает данные, их формат и логика последующей обработки зависит от параметра `type`.
 
-	`GET` `http://api.morion.ua/1/incoming/help`
+	`720fc5af` - например, чек из аптеки в `json`:
 
 	```
-	[
+	URL: http://api.morion.ua/1/incoming/add?type=720fc5af
+	Method: POST
+	Content-Type: application/json
+	Body:
 		{
-			"type": "720fc5af",
-			"desc": "Аптечный чек",
-			"meta": "http://api.morion.ua/1/incoming/720fc5af/help"
-		},
+			"id": 403,
+			"name": ["one", "two", "three"],
+			"price": [0.5, 1.25, 3.50]
+		}
+	```
 
-		{
-			"type": "1a383386",
-			"desc": "Оптовый прайс лист",
-			"meta": "http://api.morion.ua/1/incoming/1a383386/help"
-		},
-	]
+	`1a383386` - что-то еще, например прайс-лист в `csv`:
+
+	```
+	URL: http://api.morion.ua/1/incoming/add?type=1a383386
+	Method: POST
+	Content-Type: text/csv
+	Body:
+		blah;blah;blah;blah;blah;
+		blah;blah;blah;blah;blah;
+		blah;blah;blah;blah;blah;
+		blah;blah;blah;blah;blah;
+		blah;blah;blah;blah;blah;
 	```	
 
-	`GET` `http://api.morion.ua/1/incoming/720fc5af/help`
+	`e17370c5` - или же можно принимать`xmmo`: 
 
 	```
-	{
-		"id": number,                            //  description here
-		"name": ["string", "string", "string"],  //  description here
-		"price": [float, float, float]           //  description here
-	}
-	```
-
-
-* **Прием данных по их типу:** `incoming/:type/add`
-
-	Принимает данные, их формат и логика последующей обработки зависит от типа `:type`.
-
-	`720fc5af` - например, чек из аптеки
-
-	`POST` `http://api.morion.ua/1/incoming/720fc5af/add`
-
-	```
-	{
-		"id": 403,
-		"name": ["one", "two", "three"],
-		"price": [0.5, 1.25, 3.50]
-	}
-	```
-
-	`1a383386` - что-то еще, например прайс-лист в `csv`.
-
-	`POST` `http://api.morion.ua/1/incoming/1a383386/add`
-
-	```
-	"value";"value";"value";
-	"value";"value";"value";
-	"value";"value";"value";
-	"value";"value";"value";
+	URL: http://api.morion.ua/1/incoming/add?type=e17370c5
+	Method: POST
+	Content-Type: text/xml
+	Body:
+		<?xml version="1.0"?>
+		<ElOrder> 
+			<Document DocType="РасходнаяНакладная" Version="1" DivType=" Простые ">
+				<Header> 
+				</Header> 
+				<Body>
+					<Items>
+					</Items>
+				</Body> 
+			</Document> 
+		</ElOrder> 
 	```
 
 * **Создание ссылки:** `link/create`
 	
-	Присваивает контрольной сумме `sha` ссылку на новое значение эталонного ключа `new`.
-
-	`POST` `http://api.morion.ua/1/link/create`
+	Присваивает контрольной сумме `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
 
 	```
-	{
-		"sha": "7c0e9591ff9b00f397718a63ae17370c566d4ca8",  // контрольная сумма (string) 
-		"new": 5577006791947779410                          // новое значение ключа (Int64)
-	}
+	URL: http://api.morion.ua/1/link/create
+	Method: POST
+	Content-Type: application/json
+	Body:
+		{
+			"sha": "7c0e9591ff9b00f397718a63ae17370c566d4ca8"
+			"new": 5577006791947779410
+		}
 	```
 
-* **Переназначение ссылки:** `link/update`
-
-	Обновляет все ссылки эталонного ключа `old` на его новое значение `new`.
-
-	`POST` `http://api.morion.ua/1/link/update`
+* **Обновление ссылки:** `link/update`
+	
+	Обновляет для контрольной суммы `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
 
 	```
-	{
-		"old": 5577006791947779410,  // предыдущее значение (Int64)
-		"new": 4039410712379194777   // новое значение (Int64)
-	}
+	URL: http://api.morion.ua/1/link/update
+	Method: POST
+	Content-Type: application/json
+	Body:
+		{
+			"sha": "15ca051d88fec9a4fd6eb39e99b1148eb2d7e3a6"
+			"new": 6791947557700779410
+		}
 	```
 
 * **Удаление ссылки:** `link/delete`
-
-	Удаляет все ссылки на эталонный ключ `old`.
-
-	`POST` `http://api.morion.ua/1/link/delete`
+	
+	Удаляет ссылку для контрольной суммы `sha` (string):
 
 	```
-	{
-		"old": 4039410712379194777  // текущее значение (Int64)
-	}
+	URL: http://api.morion.ua/1/link/delete
+	Method: POST
+	Content-Type: application/json
+	Body:
+		{
+			"sha": "97c01ac379ab5c9019a2fff10de32ecb36abae53"
+		}
+	```
+
+* **Переназначение ссылок:** `links/update`
+
+	Обновляет все ссылки на эталонный ключ `old` (Int64) на его новое значение `new` (Int64):
+
+	```
+	URL: http://api.morion.ua/1/links/update
+	Method: POST
+	Content-Type: application/json
+	Body:
+		{
+			"old": 5577006791947779410
+			"new": 4039410712379194777
+		}
+		
+	```
+
+* **Удаление ссылок:** `links/delete`
+
+	Удаляет все ссылки на эталонный ключ `old` (Int64):
+
+	```
+	URL: http://api.morion.ua/1/links/delete
+	Method: POST
+	Content-Type: application/json
+	Body:
+		{
+			"old": 4039410712379194777
+		}
 	```
