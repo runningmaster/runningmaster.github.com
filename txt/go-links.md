@@ -17,6 +17,7 @@
 * [Go on Pastebin.com](http://pastebin.com/archive/go)
 
 ## Ресурсы
+* [GoPkgDoc for Go packages on Bitbucket, Github, Launchpad and Google Project Hosting.](http://go.pkgdoc.org/)
 * [Go Projects](http://godashboard.appspot.com/) (завораживает)
 * [Go Language Resources](http://go-lang.cat-v.org/)
 * [GoLang Tutorials](http://golangtutorials.blogspot.com/2011/05/table-of-contents.html)

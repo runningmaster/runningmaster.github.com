@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-05-10T16:43:14+03:00</updated>
+<updated>2012-05-21T13:17:30+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -13,27 +13,10 @@
 
 
 <entry>
-	<title>Альтернатива Django|Rails на Go</title>
-	<link href="http://runningmaster.github.com/go-start.html"/>
-	<id>http://runningmaster.github.com/go-start</id>
-	<updated>2012-05-09T00:00:00</updated>
-	<content type="html"><![CDATA[<p>Намедни открыл для себя один занимательный проект - высокоуровневый веб-фреймворк <a href="https://github.com/ungerik/go-start">Go-start</a>, который позиционируется как аналог <a href="http://ru.wikipedia.org/wiki/Django">Django для Python</a> или <a href="http://ru.wikipedia.org/wiki/Ruby_on_Rails">Rails для Ruby</a>, но только написан на <a href="http://golang.org/">Go</a> и имеет в некоторой степени отличную от первых <a href="https://github.com/ungerik/go-start/blob/master/README.md">философию</a>.</p>
-
-<p>Фреймворк имеет спонсора и <strong>очень активно развивается</strong>, разгоняя ветер перемен базой данных <a href="http://ru.wikipedia.org/wiki/MongoDB">MongoDB</a>, которая используется по умолчанию.</p>
-
-<ul>
-<li><a href="http://startuplive.in/">Вот</a> пример сделанного сайта на посмотреть.</li>
-<li><a href="http://speakerdeck.com/u/ungerik/p/the-go-start-webframework">Вот</a> слайды презентации.</li>
-<li><a href="http://vimeo.com/39348998">Вот</a> видео презентации.</li>
-</ul>
-]]></content>
-</entry>
-
-<entry>
 	<title>Полезные ссылки для изучения Go</title>
 	<link href="http://runningmaster.github.com/go-links.html"/>
 	<id>http://runningmaster.github.com/go-links</id>
-	<updated>2012-05-08T00:00:00</updated>
+	<updated>2012-05-21T00:00:00</updated>
 	<content type="html"><![CDATA[<p>Складываю в одно место ссылки, которые пригодятся в деле освоения этого языка или же освежения памяти по нему.</p>
 
 <h2>Официально</h2>
@@ -59,6 +42,7 @@
 <h2>Ресурсы</h2>
 
 <ul>
+<li><a href="http://go.pkgdoc.org/">GoPkgDoc for Go packages on Bitbucket, Github, Launchpad and Google Project Hosting.</a></li>
 <li><a href="http://godashboard.appspot.com/">Go Projects</a> (завораживает)</li>
 <li><a href="http://go-lang.cat-v.org/">Go Language Resources</a></li>
 <li><a href="http://golangtutorials.blogspot.com/2011/05/table-of-contents.html">GoLang Tutorials</a></li>
@@ -84,6 +68,23 @@
 <li><a href="http://www.ibm.com/developerworks/ru/library/l-go_04/">ЯП Go: Часть 4. Создание GUI-приложений</a> 05.07.2011</li>
 <li><a href="http://netsago.org/ru/docs/print/1/16">Go для программистов C++</a> 29.09.2010</li>
 <li><a href="http://eao197.narod.ru/desc/short_effective_go.html">Краткий пересказ Effective Go на русском языке</a> 19.11.2009</li>
+</ul>
+]]></content>
+</entry>
+
+<entry>
+	<title>Альтернатива Django|Rails на Go</title>
+	<link href="http://runningmaster.github.com/go-start.html"/>
+	<id>http://runningmaster.github.com/go-start</id>
+	<updated>2012-05-09T00:00:00</updated>
+	<content type="html"><![CDATA[<p>Намедни открыл для себя один занимательный проект - высокоуровневый веб-фреймворк <a href="https://github.com/ungerik/go-start">Go-start</a>, который позиционируется как аналог <a href="http://ru.wikipedia.org/wiki/Django">Django для Python</a> или <a href="http://ru.wikipedia.org/wiki/Ruby_on_Rails">Rails для Ruby</a>, но только написан на <a href="http://golang.org/">Go</a> и имеет в некоторой степени отличную от первых <a href="https://github.com/ungerik/go-start/blob/master/README.md">философию</a>.</p>
+
+<p>Фреймворк имеет спонсора и <strong>очень активно развивается</strong>, разгоняя ветер перемен базой данных <a href="http://ru.wikipedia.org/wiki/MongoDB">MongoDB</a>, которая используется по умолчанию.</p>
+
+<ul>
+<li><a href="http://startuplive.in/">Вот</a> пример сделанного сайта на посмотреть.</li>
+<li><a href="http://speakerdeck.com/u/ungerik/p/the-go-start-webframework">Вот</a> слайды презентации.</li>
+<li><a href="http://vimeo.com/39348998">Вот</a> видео презентации.</li>
 </ul>
 ]]></content>
 </entry>
