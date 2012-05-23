@@ -47,9 +47,9 @@
 <h2>Соглашения</h2>
 
 <ol>
-<li><p>API определяется следующим общим форматом:</p>
+<li><p>API определяется следующим общим url-форматом:</p>
 
-<pre><code>https://api.{domain}/{version}/{aspect}/{action}
+<pre><code>https://api.{domain}/{version}/{aspect}/{action}[?key=value&amp;...]
 </code></pre></li>
 
 <li><p>API реализуется двумя HTTP методами:</p>
@@ -57,7 +57,12 @@
 <ul>
 <li><code>GET</code> - для получения данных из сервиса в теле ответа на запрос</li>
 <li><code>POST</code> - для передачи данных в сервис в теле запроса</li>
-</ul></li>
+</ul>
+
+<p>В обоих методах обязателен параметр для аутентификации:</p>
+
+<pre><code>&lt;url&gt;?auth=auth-sha-value
+</code></pre></li>
 
 <li><p>API предпочитает формат данных <code>application/json</code> (см. <a href="http://json.org/">JSON</a>), как для приема, так и для передачи данных. В специальных же случаях может быть оговорен другой тип (см. <a href="http://en.wikipedia.org/wiki/Mime_type">Content-Type</a>), например, <code>text/csv</code> для исторической поддержки определенного вида информации.</p></li>
 </ol>
@@ -69,13 +74,54 @@
 <p>Облачный сервис распознавания входящих данных различного типа в реальном режиме времени. Нераспознанные названия отсылает в сервис экспертной системы для последующей их привязки к значениям ключей эталонных справочников. Распознанные названия вместе с их атрибутами отсылает для последующей обработки в соотвествующие сервисы.</p>
 
 <ul>
-<li><p><strong>Прием данных по их типу:</strong> <code>incoming/add</code></p>
+<li><p><strong>Создание аутентификации:</strong> <code>auth/create</code> (private)</p>
+
+<p>Создает новую аутентификацию <code>sha</code> (string) &lt;-&gt; <code>new</code> (int64), как соответствие двух идентификаторов (пользовательского восьми символьного идентификатора доступа к сервису и его идентификатора в экспертной системе):</p>
+
+<pre><code>POST https://api.morion.ua/1/auth/create?auth=1243b7cd HTTP/1.1
+Content-Type: application/json
+
+
+{
+    &quot;sha&quot;: &quot;1243b7cd&quot;,
+    &quot;new&quot;: 7775577006791949410
+}
+</code></pre></li>
+
+<li><p><strong>Обновление аутентификации:</strong> <code>auth/update</code> (private)</p>
+
+<p>Обновляет аутентификацию <code>sha</code> (string) новым значением <code>new</code> (int64):</p>
+
+<pre><code>POST https://api.morion.ua/1/auth/update?auth=1243b7cd HTTP/1.1
+Content-Type: application/json
+
+
+{
+    &quot;sha&quot;: &quot;1243b7cd&quot;,
+    &quot;new&quot;: 1949777557700679410
+}
+</code></pre></li>
+
+<li><p><strong>Удаление аутентификации:</strong> <code>auth/delete</code> (private)</p>
+
+<p>Удаляет аутентификацию <code>sha</code> (string):</p>
+
+<pre><code>POST https://api.morion.ua/1/auth/delete?auth=1243b7cd HTTP/1.1
+Content-Type: application/json
+
+
+{
+    &quot;sha&quot;: &quot;1243b7cd&quot;,
+}
+</code></pre></li>
+
+<li><p><strong>Прием данных по их типу:</strong> <code>incoming/add</code> (public)</p>
 
 <p>Принимает данные из различных источников. Формат и логика их последующей обработки зависит от параметра <code>type</code>, который представляется в виде первых восьми символов SHA-1 кода строковых констант, определяемых разработчиками сервиса для каждого отдельного случая.</p>
 
 <p><code>720fc5af</code> - например, чек из аптеки в <code>json</code>:</p>
 
-<pre><code>POST https://api.morion.ua/1/incoming/add?type=720fc5af HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&amp;type=720fc5af HTTP/1.1
 Content-Type: application/json
 
 
@@ -89,7 +135,7 @@ Content-Type: application/json
 
 <p><code>1a383386</code> - что-то еще, например прайс-лист в <code>csv</code>:</p>
 
-<pre><code>POST https://api.morion.ua/1/incoming/add?type=1a383386 HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&amp;type=1a383386 HTTP/1.1
 Content-Type: text/csv
 
 
@@ -102,7 +148,7 @@ blah;blah;blah;blah;blah;
 
 <p><code>e17370c5</code> - или же можно принимать<code>xmmo</code>:</p>
 
-<pre><code>POST https://api.morion.ua/1/incoming/add?type=e17370c5 HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&amp;type=e17370c5 HTTP/1.1
 Content-Type: text/xml
 
 
@@ -119,11 +165,11 @@ Content-Type: text/xml
 &lt;/ElOrder&gt; 
 </code></pre></li>
 
-<li><p><strong>Создание ссылки:</strong> <code>link/create</code></p>
+<li><p><strong>Создание ссылки:</strong> <code>link/create</code> (private)</p>
 
 <p>Присваивает контрольной сумме <code>sha</code> (string) ссылку на новое значение эталонного ключа <code>new</code> (Int64):</p>
 
-<pre><code>POST https://api.morion.ua/1/link/create HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/link/create?auth=1243b7cd HTTP/1.1
 Content-Type: application/json
 
 
@@ -133,11 +179,11 @@ Content-Type: application/json
 }
 </code></pre></li>
 
-<li><p><strong>Обновление ссылки:</strong> <code>link/update</code></p>
+<li><p><strong>Обновление ссылки:</strong> <code>link/update</code> (private)</p>
 
 <p>Обновляет для контрольной суммы <code>sha</code> (string) ссылку на новое значение эталонного ключа <code>new</code> (Int64):</p>
 
-<pre><code>POST https://api.morion.ua/1/link/update HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/link/update?auth=1243b7cd HTTP/1.1
 Content-Type: application/json
 
 
@@ -147,11 +193,11 @@ Content-Type: application/json
 }
 </code></pre></li>
 
-<li><p><strong>Удаление ссылки:</strong> <code>link/delete</code></p>
+<li><p><strong>Удаление ссылки:</strong> <code>link/delete</code> (private)</p>
 
 <p>Удаляет ссылку для контрольной суммы <code>sha</code> (string):</p>
 
-<pre><code>POST https://api.morion.ua/1/link/delete HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/link/delete?auth=1243b7cd HTTP/1.1
 Content-Type: application/json
 
 
@@ -160,11 +206,11 @@ Content-Type: application/json
 }
 </code></pre></li>
 
-<li><p><strong>Переназначение ссылок:</strong> <code>links/update</code></p>
+<li><p><strong>Переназначение ссылок:</strong> <code>links/update</code> (private)</p>
 
 <p>Обновляет все ссылки на эталонный ключ <code>old</code> (Int64) на его новое значение <code>id_new</code> (Int64):</p>
 
-<pre><code>POST https://api.morion.ua/1/links/update HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/links/update?auth=1243b7cd HTTP/1.1
 Content-Type: application/json
 
 
@@ -174,11 +220,11 @@ Content-Type: application/json
 }
 </code></pre></li>
 
-<li><p><strong>Удаление ссылок:</strong> <code>links/delete</code></p>
+<li><p><strong>Удаление ссылок:</strong> <code>links/delete</code> (private)</p>
 
 <p>Удаляет все ссылки на эталонный ключ <code>old</code> (Int64):</p>
 
-<pre><code>POST https://api.morion.ua/1/links/delete HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/links/delete?auth=1243b7cd HTTP/1.1
 Content-Type: application/json
 
 
