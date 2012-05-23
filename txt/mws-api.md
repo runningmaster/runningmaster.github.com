@@ -66,7 +66,7 @@ Linkdroid API
 	Content-Type: application/json
 	
 	{
-		"sha": "1243b7cd",
+		"sha": "1243b7cd"
 	}
 	```
 
