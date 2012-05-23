@@ -102,7 +102,7 @@ Linkdroid API
 	blah;blah;blah;blah;blah;
 	```	
 
-	`e17370c5` - или же можно принимать`xmmo`: 
+	`e17370c5` - или же можно принимать `xmmo`: 
 
 	```
 	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&type=e17370c5 HTTP/1.1
