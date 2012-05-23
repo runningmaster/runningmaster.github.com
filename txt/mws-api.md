@@ -1,84 +1,76 @@
 *документ постоянно обновляется*
 
-Соглашения 
-----------
+## Соглашения 
+
 
 Данные передаются по протоколу [HTTPS](http://ru.wikipedia.org/wiki/HTTPS), поддерживающий шифрование. На текущий момент времени сертификат сервера самодписанный и игнорируется клиентом.
 
-1. API определяется следующим общим url-форматом:
-
-	```
-	https://api.{domain}/{version}/{aspect}/{action}[?key=value&...]
-	```
-
-2. API реализуется двумя HTTP методами: 
+1. API реализуется двумя HTTP методами: 
 
 	* `GET` - для получения данных из сервиса в теле ответа на запрос
 	* `POST` - для передачи данных в сервис в теле запроса
 
-	В обоих методах обязателен параметр для аутентификации, который рассчитывается по одинаковому алгоритму как на стороне клиента, так и на стороне сервера:
+2. API идентификация реализуется через параметры методов:
+
+	* `auth` (string) - выдается при регистрации клиента и идентифицирует его
+	* `pass` (string) - рассчитывается по одинаковому алгоритму (как на стороне клиента, так и на стороне сервера) на основе секретного ключа, уникального для каждого клиента
 
 	```
-	<url>?auth=sha(post_data+secret_key)
+	<authparams> => auth=public_key&pass=sha1(secret_key+post_data)
 	``` 
 
-3. API предпочитает формат данных `application/json` (см. [JSON](http://json.org/)), как для приема, так и для передачи данных. В специальных же случаях может быть оговорен другой тип (см. [Content-Type](http://en.wikipedia.org/wiki/Mime_type)), например, `text/csv` для исторической поддержки определенного вида информации.
+3. API определяется следующим общим url-форматом:
 
-Linkdroid API
--------------
+	```
+	https://api.{domain}/{version}/{aspect}/{action}[?<authparams>&key=value&...]
+	```
+
+4. API предпочитает формат данных `application/json` (см. [JSON](http://json.org/)), как для приема, так и для передачи данных. В специальных же случаях может быть оговорен другой тип (см. [Content-Type](http://en.wikipedia.org/wiki/Mime_type)), например, `text/csv` для исторической поддержки определенного вида информации.
+
+## Linkdroid API
 
 Облачный сервис распознавания входящих данных различного типа в реальном режиме времени. Нераспознанные названия отсылает в сервис экспертной системы для последующей их привязки к значениям ключей эталонных справочников. Распознанные названия вместе с их атрибутами отсылает для последующей обработки в соотвествующие сервисы.
 
-* **Создание аутентификации:** `auth/create` (private)
+### Аутентификация - auth (private)
 
-	Создает новую аутентификацию `sha` (string) <-> `new` (int64), как соответствие двух идентификаторов (пользовательского восьми символьного идентификатора доступа к сервису и его идентификатора в экспертной системе):
+* **Создание/обновление аутентификации:** `auth/set`
+
+	Создает или обновляет аутентификацию как соответствие глобального идентификатора клиента в экспертной системе `guid` (string) к паре двух хеш-ключей - публичного `pkey` (string) и секретного `skey` (string):
 
 	```
-	POST https://api.morion.ua/1/auth/create?auth=1243b7cd HTTP/1.1
+	POST https://api.morion.ua/1/auth/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
-		"key": "1243b7cd",
-		"new": 7775577006791949410
+		"guid": "C6847488-A51B-11E1-B30F-81436188709B",
+		"pkey": "ad0f7b32c41f311160db30fd2dc5f9f913f0aa41",
+		"skey": "f01fd7eb1485290c10b1ac95db9710670f89bda6"
 	}
 	```
 
-* **Обновление аутентификации:** `auth/update` (private)
+* **Удаление аутентификации:** `auth/del` (private)
 
-	Обновляет аутентификацию `sha` (string) новым значением `new` (int64):
+	Удаляет аутентификацию `guid` (string):
 
 	```
-	POST https://api.morion.ua/1/auth/update?auth=1243b7cd HTTP/1.1
+	POST https://api.morion.ua/1/auth/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
-		"sha": "1243b7cd",
-		"new": 1949777557700679410
+		"guid": "C6847488-A51B-11E1-B30F-81436188709B"
 	}
 	```
 
-* **Удаление аутентификации:** `auth/delete` (private)
+### Входящие данные - incoming (public)
 
-	Удаляет аутентификацию `sha` (string):
+* **Прием данных по их типу:** `incoming/add`
 
-	```
-	POST https://api.morion.ua/1/auth/delete?auth=1243b7cd HTTP/1.1
-	Content-Type: application/json
-	
-	{
-		"sha": "1243b7cd"
-	}
-	```
+	Принимает данные из различных источников. Формат и логика их последующей обработки зависит от параметра `type`, который задается разработчиками сервиса для каждого отдельного случая.
 
-
-* **Прием данных по их типу:** `incoming/add` (public)
-
-	Принимает данные из различных источников. Формат и логика их последующей обработки зависит от параметра `type`, который представляется в виде первых восьми символов SHA-1 кода строковых констант, определяемых разработчиками сервиса для каждого отдельного случая.
-
-	`720fc5af` - например, чек из аптеки в `json`:
+	`type=720fc5af` - например, чек из аптеки в `json`:
 
 	```
-	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&type=720fc5af HTTP/1.1
+	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&pass=811ede49&type=720fc5af HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -89,10 +81,10 @@ Linkdroid API
 	}
 	```
 
-	`1a383386` - что-то еще, например прайс-лист в `csv`:
+	`type=1a383386` - что-то еще, например прайс-лист в `csv`:
 
 	```
-	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&type=1a383386 HTTP/1.1
+	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&pass=811ede49&type=1a383386 HTTP/1.1
 	Content-Type: text/csv
 
 	blah;blah;blah;blah;blah;
@@ -102,10 +94,10 @@ Linkdroid API
 	blah;blah;blah;blah;blah;
 	```	
 
-	`e17370c5` - или же можно принимать `xmmo`: 
+	`type=e17370c5` - или же можно принимать `xmmo`: 
 
 	```
-	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&type=e17370c5 HTTP/1.1
+	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&pass=811ede49&type=e17370c5 HTTP/1.1
 	Content-Type: text/xml
 
 	<?xml version="1.0"?>
@@ -121,12 +113,14 @@ Linkdroid API
 	</ElOrder> 
 	```
 
-* **Создание ссылки:** `link/create` (private)
+### Связь - link (private)
+
+* **Создание/обновление связи:** `link/set` 
 	
-	Присваивает контрольной сумме `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
+	Устанавливает для контрольной суммы `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
 
 	```
-	POST https://api.morion.ua/1/link/create?auth=1243b7cd HTTP/1.1
+	POST https://api.morion.ua/1/link/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
@@ -135,26 +129,12 @@ Linkdroid API
 	}
 	```
 
-* **Обновление ссылки:** `link/update` (private)
-	
-	Обновляет для контрольной суммы `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
-
-	```
-	POST https://api.morion.ua/1/link/update?auth=1243b7cd HTTP/1.1
-	Content-Type: application/json
-
-	{
-		"sha": "15ca051d88fec9a4fd6eb39e99b1148eb2d7e3a6",
-		"new": 6791947557700779410
-	}
-	```
-
-* **Удаление ссылки:** `link/delete` (private)
+* **Удаление связи:** `link/del`
 	
 	Удаляет ссылку для контрольной суммы `sha` (string):
 
 	```
-	POST https://api.morion.ua/1/link/delete?auth=1243b7cd HTTP/1.1
+	POST https://api.morion.ua/1/link/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -162,12 +142,14 @@ Linkdroid API
 	}
 	```
 
-* **Переназначение ссылок:** `links/update` (private)
+### Связи - links (private)
+
+* **Переназначение связей:** `links/set`
 
 	Обновляет все ссылки на эталонный ключ `old` (Int64) на его новое значение `id_new` (Int64):
 
 	```
-	POST https://api.morion.ua/1/links/update?auth=1243b7cd HTTP/1.1
+	POST https://api.morion.ua/1/links/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -176,12 +158,12 @@ Linkdroid API
 	}
 	```
 
-* **Удаление ссылок:** `links/delete` (private)
+* **Удаление связей:** `links/del`
 
 	Удаляет все ссылки на эталонный ключ `old` (Int64):
 
 	```
-	POST https://api.morion.ua/1/links/delete?auth=1243b7cd HTTP/1.1
+	POST https://api.morion.ua/1/links/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
