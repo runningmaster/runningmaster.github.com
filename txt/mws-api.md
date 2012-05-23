@@ -1,10 +1,12 @@
+*документ постоянно обновляется*
+
 Соглашения 
 ----------
 
 1. API определяется следующим общим форматом:
 
 	```
-	http://api.{domain}/{version}/{aspect}/{action}
+	https://api.{domain}/{version}/{aspect}/{action}
 	```
 
 2. API реализуется двумя HTTP методами: 
@@ -13,6 +15,8 @@
 	* `POST` - для передачи данных в сервис в теле запроса
 
 3. API предпочитает формат данных `application/json` (см. [JSON](http://json.org/)), как для приема, так и для передачи данных. В специальных же случаях может быть оговорен другой тип (см. [Content-Type](http://en.wikipedia.org/wiki/Mime_type)), например, `text/csv` для исторической поддержки определенного вида информации.
+
+Данные передаются по протоколу [HTTPS](http://ru.wikipedia.org/wiki/HTTPS), поддерживающий шифрование. На текущий момент времени сертификат сервера самодписанный и игнорируется клиентом.
 
 
 Linkdroid API
@@ -27,7 +31,7 @@ Linkdroid API
 	`720fc5af` - например, чек из аптеки в `json`:
 
 	```
-	POST http://api.morion.ua/1/incoming/add?type=720fc5af HTTP/1.1
+	POST https://api.morion.ua/1/incoming/add?type=720fc5af HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -41,7 +45,7 @@ Linkdroid API
 	`1a383386` - что-то еще, например прайс-лист в `csv`:
 
 	```
-	POST http://api.morion.ua/1/incoming/add?type=1a383386 HTTP/1.1
+	POST https://api.morion.ua/1/incoming/add?type=1a383386 HTTP/1.1
 	Content-Type: text/csv
 
 	blah;blah;blah;blah;blah;
@@ -54,7 +58,7 @@ Linkdroid API
 	`e17370c5` - или же можно принимать`xmmo`: 
 
 	```
-	POST http://api.morion.ua/1/incoming/add?type=e17370c5 HTTP/1.1
+	POST https://api.morion.ua/1/incoming/add?type=e17370c5 HTTP/1.1
 	Content-Type: text/xml
 
 	<?xml version="1.0"?>
@@ -75,7 +79,7 @@ Linkdroid API
 	Присваивает контрольной сумме `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
 
 	```
-	POST http://api.morion.ua/1/link/create HTTP/1.1
+	POST https://api.morion.ua/1/link/create HTTP/1.1
 	Content-Type: application/json
 	
 	{
@@ -89,7 +93,7 @@ Linkdroid API
 	Обновляет для контрольной суммы `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
 
 	```
-	POST http://api.morion.ua/1/link/update HTTP/1.1
+	POST https://api.morion.ua/1/link/update HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -103,7 +107,7 @@ Linkdroid API
 	Удаляет ссылку для контрольной суммы `sha` (string):
 
 	```
-	POST http://api.morion.ua/1/link/delete HTTP/1.1
+	POST https://api.morion.ua/1/link/delete HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -113,10 +117,10 @@ Linkdroid API
 
 * **Переназначение ссылок:** `links/update`
 
-	Обновляет все ссылки на эталонный ключ `old` (Int64) на его новое значение `new` (Int64):
+	Обновляет все ссылки на эталонный ключ `old` (Int64) на его новое значение `id_new` (Int64):
 
 	```
-	POST http://api.morion.ua/1/links/update HTTP/1.1
+	POST https://api.morion.ua/1/links/update HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -130,7 +134,7 @@ Linkdroid API
 	Удаляет все ссылки на эталонный ключ `old` (Int64):
 
 	```
-	POST http://api.morion.ua/1/links/delete HTTP/1.1
+	POST https://api.morion.ua/1/links/delete HTTP/1.1
 	Content-Type: application/json
 
 	{

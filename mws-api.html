@@ -42,12 +42,14 @@
 			</div>
 			<h1>Morion Web Services API (Draft)</h1>
 			<div id="post">
-				<h2>Соглашения</h2>
+				<p><em>документ постоянно обновляется</em></p>
+
+<h2>Соглашения</h2>
 
 <ol>
 <li><p>API определяется следующим общим форматом:</p>
 
-<pre><code>http://api.{domain}/{version}/{aspect}/{action}
+<pre><code>https://api.{domain}/{version}/{aspect}/{action}
 </code></pre></li>
 
 <li><p>API реализуется двумя HTTP методами:</p>
@@ -60,6 +62,8 @@
 <li><p>API предпочитает формат данных <code>application/json</code> (см. <a href="http://json.org/">JSON</a>), как для приема, так и для передачи данных. В специальных же случаях может быть оговорен другой тип (см. <a href="http://en.wikipedia.org/wiki/Mime_type">Content-Type</a>), например, <code>text/csv</code> для исторической поддержки определенного вида информации.</p></li>
 </ol>
 
+<p>Данные передаются по протоколу <a href="http://ru.wikipedia.org/wiki/HTTPS">HTTPS</a>, поддерживающий шифрование. На текущий момент времени сертификат сервера самодписанный и игнорируется клиентом.</p>
+
 <h2>Linkdroid API</h2>
 
 <p>Облачный сервис распознавания входящих данных различного типа в реальном режиме времени. Нераспознанные названия отсылает в сервис экспертной системы для последующей их привязки к значениям ключей эталонных справочников. Распознанные названия вместе с их атрибутами отсылает для последующей обработки в соотвествующие сервисы.</p>
@@ -71,7 +75,7 @@
 
 <p><code>720fc5af</code> - например, чек из аптеки в <code>json</code>:</p>
 
-<pre><code>POST http://api.morion.ua/1/incoming/add?type=720fc5af HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/incoming/add?type=720fc5af HTTP/1.1
 Content-Type: application/json
 
 
@@ -85,7 +89,7 @@ Content-Type: application/json
 
 <p><code>1a383386</code> - что-то еще, например прайс-лист в <code>csv</code>:</p>
 
-<pre><code>POST http://api.morion.ua/1/incoming/add?type=1a383386 HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/incoming/add?type=1a383386 HTTP/1.1
 Content-Type: text/csv
 
 
@@ -98,7 +102,7 @@ blah;blah;blah;blah;blah;
 
 <p><code>e17370c5</code> - или же можно принимать<code>xmmo</code>:</p>
 
-<pre><code>POST http://api.morion.ua/1/incoming/add?type=e17370c5 HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/incoming/add?type=e17370c5 HTTP/1.1
 Content-Type: text/xml
 
 
@@ -119,7 +123,7 @@ Content-Type: text/xml
 
 <p>Присваивает контрольной сумме <code>sha</code> (string) ссылку на новое значение эталонного ключа <code>new</code> (Int64):</p>
 
-<pre><code>POST http://api.morion.ua/1/link/create HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/link/create HTTP/1.1
 Content-Type: application/json
 
 
@@ -133,7 +137,7 @@ Content-Type: application/json
 
 <p>Обновляет для контрольной суммы <code>sha</code> (string) ссылку на новое значение эталонного ключа <code>new</code> (Int64):</p>
 
-<pre><code>POST http://api.morion.ua/1/link/update HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/link/update HTTP/1.1
 Content-Type: application/json
 
 
@@ -147,7 +151,7 @@ Content-Type: application/json
 
 <p>Удаляет ссылку для контрольной суммы <code>sha</code> (string):</p>
 
-<pre><code>POST http://api.morion.ua/1/link/delete HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/link/delete HTTP/1.1
 Content-Type: application/json
 
 
@@ -158,9 +162,9 @@ Content-Type: application/json
 
 <li><p><strong>Переназначение ссылок:</strong> <code>links/update</code></p>
 
-<p>Обновляет все ссылки на эталонный ключ <code>old</code> (Int64) на его новое значение <code>new</code> (Int64):</p>
+<p>Обновляет все ссылки на эталонный ключ <code>old</code> (Int64) на его новое значение <code>id_new</code> (Int64):</p>
 
-<pre><code>POST http://api.morion.ua/1/links/update HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/links/update HTTP/1.1
 Content-Type: application/json
 
 
@@ -174,7 +178,7 @@ Content-Type: application/json
 
 <p>Удаляет все ссылки на эталонный ключ <code>old</code> (Int64):</p>
 
-<pre><code>POST http://api.morion.ua/1/links/delete HTTP/1.1
+<pre><code>POST https://api.morion.ua/1/links/delete HTTP/1.1
 Content-Type: application/json
 
 
