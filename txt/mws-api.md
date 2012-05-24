@@ -61,16 +61,16 @@
 	}
 	```
 
-### Входящие данные - incoming (public)
+### Входящие данные - data (public)
 
-* **Прием данных по их типу:** `incoming/add`
+* **Прием данных по их типу:** `data/add`
 
 	Принимает данные из различных источников. Формат и логика их последующей обработки зависит от параметра `type`, который задается разработчиками сервиса для каждого отдельного случая.
 
 	`type=720fc5af` - например, чек из аптеки в `json`:
 
 	```
-	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&pass=811ede49&type=720fc5af HTTP/1.1
+	POST https://api.morion.ua/1/data/add?auth=1243b7cd&pass=811ede49&type=720fc5af HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -84,7 +84,7 @@
 	`type=1a383386` - что-то еще, например прайс-лист в `csv`:
 
 	```
-	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&pass=811ede49&type=1a383386 HTTP/1.1
+	POST https://api.morion.ua/1/data/add?auth=1243b7cd&pass=811ede49&type=1a383386 HTTP/1.1
 	Content-Type: text/csv
 
 	blah;blah;blah;blah;blah;
@@ -97,7 +97,7 @@
 	`type=e17370c5` - или же можно принимать `xmmo`: 
 
 	```
-	POST https://api.morion.ua/1/incoming/add?auth=1243b7cd&pass=811ede49&type=e17370c5 HTTP/1.1
+	POST https://api.morion.ua/1/data/add?auth=1243b7cd&pass=811ede49&type=e17370c5 HTTP/1.1
 	Content-Type: text/xml
 
 	<?xml version="1.0"?>
