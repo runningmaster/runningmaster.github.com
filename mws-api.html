@@ -193,16 +193,12 @@ Content-Type: application/json
     &quot;sha&quot;: &quot;97c01ac379ab5c9019a2fff10de32ecb36abae53&quot;
 }
 </code></pre></li>
-</ul>
 
-<h3>Связи - links (private)</h3>
-
-<ul>
-<li><p><strong>Переназначение связей:</strong> <code>/ld1/links/set</code></p>
+<li><p><strong>Переназначение связей:</strong> <code>/ld1/link/sets</code></p>
 
 <p>Обновляет все ссылки на эталонный ключ <code>old</code> (Int64) на его новое значение <code>id_new</code> (Int64):</p>
 
-<pre><code>POST https://api.morion.ua/ld1/links/set?auth=1243b7cd&amp;pass=811ede49 HTTP/1.1
+<pre><code>POST https://api.morion.ua/ld1/link/sets?auth=1243b7cd&amp;pass=811ede49 HTTP/1.1
 Content-Type: application/json
 
 
@@ -216,7 +212,7 @@ Content-Type: application/json
 
 <p>Удаляет все ссылки на эталонный ключ <code>old</code> (Int64):</p>
 
-<pre><code>POST https://api.morion.ua/ld1/links/del?auth=1243b7cd&amp;pass=811ede49 HTTP/1.1
+<pre><code>POST https://api.morion.ua/ld1/link/dels?auth=1243b7cd&amp;pass=811ede49 HTTP/1.1
 Content-Type: application/json
 
 

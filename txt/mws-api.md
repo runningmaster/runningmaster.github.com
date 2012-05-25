@@ -141,14 +141,12 @@
 	}
 	```
 
-### Связи - links (private)
-
-* **Переназначение связей:** `/ld1/links/set`
+* **Переназначение связей:** `/ld1/link/sets`
 
 	Обновляет все ссылки на эталонный ключ `old` (Int64) на его новое значение `id_new` (Int64):
 
 	```
-	POST https://api.morion.ua/ld1/links/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/link/sets?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -162,7 +160,7 @@
 	Удаляет все ссылки на эталонный ключ `old` (Int64):
 
 	```
-	POST https://api.morion.ua/ld1/links/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/link/dels?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
