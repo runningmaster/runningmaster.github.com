@@ -14,10 +14,10 @@
 	* `auth` (string) - выдается при регистрации клиента и идентифицирует его
 	* `pass` (string) - рассчитывается по одинаковому алгоритму (как на стороне клиента, так и на стороне сервера) на основе секретного ключа, уникального для каждого клиента
 
-	```
-	<authparams> => auth=public_key&pass=sha1(secret_key+post_data)
-	``` 
-
+	`GET` `<auth_params> => auth=public_key&pass=sha1(secret_key+public_key)`
+	
+	`POST` `<auth_params> => auth=public_key&pass=sha1(secret_key+post_data)`
+	
 3. API определяется следующим общим url-форматом:
 
 	```
@@ -34,14 +34,13 @@
 
 * **Создание/обновление аутентификации:** `/ld1/auth/set`
 
-	Создает или обновляет аутентификацию как соответствие глобального идентификатора клиента в экспертной системе `guid` (string) к паре двух хеш-ключей - публичного `pkey` (string) и секретного `skey` (string):
+	Создает или обновляет аутентификацию как пару хеш-ключей - публичного `pkey` (string) и секретного `skey` (string):
 
 	```
 	POST https://api.morion.ua/ld1/auth/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
-		"guid": "C6847488-A51B-11E1-B30F-81436188709B",
 		"pkey": "ad0f7b32c41f311160db30fd2dc5f9f913f0aa41",
 		"skey": "f01fd7eb1485290c10b1ac95db9710670f89bda6"
 	}
@@ -49,14 +48,14 @@
 
 * **Удаление аутентификации:** `/ld1/auth/del`
 
-	Удаляет аутентификацию `guid` (string):
+	Удаляет аутентификацию по публичному ключу `pkey` (string):
 
 	```
 	POST https://api.morion.ua/ld1/auth/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
-		"guid": "C6847488-A51B-11E1-B30F-81436188709B"
+		"pkey": "ad0f7b32c41f311160db30fd2dc5f9f913f0aa41"
 	}
 	```
 
