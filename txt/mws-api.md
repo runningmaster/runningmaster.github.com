@@ -2,7 +2,6 @@
 
 ## Соглашения 
 
-
 Данные передаются по протоколу [HTTPS](http://ru.wikipedia.org/wiki/HTTPS), поддерживающий шифрование. На текущий момент времени сертификат сервера самодписанный и игнорируется клиентом.
 
 1. API реализуется двумя HTTP методами: 
@@ -22,7 +21,7 @@
 3. API определяется следующим общим url-форматом:
 
 	```
-	https://api.{domain}/{version}/{aspect}/{action}[?<authparams>&key=value&...]
+	https://api.{domain}/{service+version}/{aspect}/{action}[?<authparams>&key=value&...]
 	```
 
 4. API предпочитает формат данных `application/json` (см. [JSON](http://json.org/)), как для приема, так и для передачи данных. В специальных же случаях может быть оговорен другой тип (см. [Content-Type](http://en.wikipedia.org/wiki/Mime_type)), например, `text/csv` для исторической поддержки определенного вида информации.
@@ -38,7 +37,7 @@
 	Создает или обновляет аутентификацию как соответствие глобального идентификатора клиента в экспертной системе `guid` (string) к паре двух хеш-ключей - публичного `pkey` (string) и секретного `skey` (string):
 
 	```
-	POST https://api.morion.ua/1/auth/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/auth/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
@@ -53,7 +52,7 @@
 	Удаляет аутентификацию `guid` (string):
 
 	```
-	POST https://api.morion.ua/1/auth/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/auth/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
@@ -70,7 +69,7 @@
 	`type=720fc5af` - например, чек из аптеки в `json`:
 
 	```
-	POST https://api.morion.ua/1/data/add?auth=1243b7cd&pass=811ede49&type=720fc5af HTTP/1.1
+	POST https://api.morion.ua/ld1/data/add?auth=1243b7cd&pass=811ede49&type=720fc5af HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -84,7 +83,7 @@
 	`type=1a383386` - что-то еще, например прайс-лист в `csv`:
 
 	```
-	POST https://api.morion.ua/1/data/add?auth=1243b7cd&pass=811ede49&type=1a383386 HTTP/1.1
+	POST https://api.morion.ua/ld1/data/add?auth=1243b7cd&pass=811ede49&type=1a383386 HTTP/1.1
 	Content-Type: text/csv
 
 	blah;blah;blah;blah;blah;
@@ -97,7 +96,7 @@
 	`type=e17370c5` - или же можно принимать `xmmo`: 
 
 	```
-	POST https://api.morion.ua/1/data/add?auth=1243b7cd&pass=811ede49&type=e17370c5 HTTP/1.1
+	POST https://api.morion.ua/ld1/data/add?auth=1243b7cd&pass=811ede49&type=e17370c5 HTTP/1.1
 	Content-Type: text/xml
 
 	<?xml version="1.0"?>
@@ -120,7 +119,7 @@
 	Устанавливает для контрольной суммы `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
 
 	```
-	POST https://api.morion.ua/1/link/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/link/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
@@ -134,7 +133,7 @@
 	Удаляет ссылку для контрольной суммы `sha` (string):
 
 	```
-	POST https://api.morion.ua/1/link/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/link/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -149,7 +148,7 @@
 	Обновляет все ссылки на эталонный ключ `old` (Int64) на его новое значение `id_new` (Int64):
 
 	```
-	POST https://api.morion.ua/1/links/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/links/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -163,7 +162,7 @@
 	Удаляет все ссылки на эталонный ключ `old` (Int64):
 
 	```
-	POST https://api.morion.ua/1/links/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/links/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
