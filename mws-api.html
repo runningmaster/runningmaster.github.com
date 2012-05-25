@@ -81,7 +81,7 @@
 <h3>Аутентификация - auth (private)</h3>
 
 <ul>
-<li><p><strong>Создание/обновление аутентификации:</strong> <code>auth/set</code></p>
+<li><p><strong>Создание/обновление аутентификации:</strong> <code>/ld1/auth/set</code></p>
 
 <p>Создает или обновляет аутентификацию как соответствие глобального идентификатора клиента в экспертной системе <code>guid</code> (string) к паре двух хеш-ключей - публичного <code>pkey</code> (string) и секретного <code>skey</code> (string):</p>
 
@@ -96,7 +96,7 @@ Content-Type: application/json
 }
 </code></pre></li>
 
-<li><p><strong>Удаление аутентификации:</strong> <code>auth/del</code> (private)</p>
+<li><p><strong>Удаление аутентификации:</strong> <code>/ld1/auth/del</code></p>
 
 <p>Удаляет аутентификацию <code>guid</code> (string):</p>
 
@@ -113,7 +113,7 @@ Content-Type: application/json
 <h3>Входящие данные - data (public)</h3>
 
 <ul>
-<li><p><strong>Прием данных по их типу:</strong> <code>data/add</code></p>
+<li><p><strong>Прием данных по их типу:</strong> <code>/ld1/data/add</code></p>
 
 <p>Принимает данные из различных источников. Формат и логика их последующей обработки зависит от параметра <code>type</code>, который задается разработчиками сервиса для каждого отдельного случая.</p>
 
@@ -167,7 +167,7 @@ Content-Type: text/xml
 <h3>Связь - link (private)</h3>
 
 <ul>
-<li><p><strong>Создание/обновление связи:</strong> <code>link/set</code></p>
+<li><p><strong>Создание/обновление связи:</strong> <code>/ld1/link/set</code></p>
 
 <p>Устанавливает для контрольной суммы <code>sha</code> (string) ссылку на новое значение эталонного ключа <code>new</code> (Int64):</p>
 
@@ -181,7 +181,7 @@ Content-Type: application/json
 }
 </code></pre></li>
 
-<li><p><strong>Удаление связи:</strong> <code>link/del</code></p>
+<li><p><strong>Удаление связи:</strong> <code>/ld1/link/del</code></p>
 
 <p>Удаляет ссылку для контрольной суммы <code>sha</code> (string):</p>
 
@@ -198,7 +198,7 @@ Content-Type: application/json
 <h3>Связи - links (private)</h3>
 
 <ul>
-<li><p><strong>Переназначение связей:</strong> <code>links/set</code></p>
+<li><p><strong>Переназначение связей:</strong> <code>/ld1/links/set</code></p>
 
 <p>Обновляет все ссылки на эталонный ключ <code>old</code> (Int64) на его новое значение <code>id_new</code> (Int64):</p>
 
@@ -212,7 +212,7 @@ Content-Type: application/json
 }
 </code></pre></li>
 
-<li><p><strong>Удаление связей:</strong> <code>links/del</code></p>
+<li><p><strong>Удаление связей:</strong> <code>/ld1/links/del</code></p>
 
 <p>Удаляет все ссылки на эталонный ключ <code>old</code> (Int64):</p>
 
