@@ -23,7 +23,8 @@
 * [GoLang Tutorials](http://golangtutorials.blogspot.com/2011/05/table-of-contents.html)
 
 ## Книги
-* [Learning Go](http://www.miek.nl/files/go/) (бесплатно)
+* [Learning Go](http://www.miek.nl/projects/learninggo/index.html) (free, donate)
+* [Network programming with Go](http://jan.newmarch.name/golang/) (free, donate)
 * [The Way to Go: A Thorough Introduction to the Go Programming Language](http://www.amazon.com/The-Way-To-Introduction-Programming/dp/1469769166/)
 * [Programming in Go: Creating Applications for the 21st Century (Developer's Library)](http://www.amazon.com/Programming-Go-Creating-Applications-Developers/dp/0321774639)
 * [The Go Programming Language Phrasebook (Developer's Library)](http://www.amazon.com/Programming-Language-Phrasebook-Developers-Library/dp/0321817141)
