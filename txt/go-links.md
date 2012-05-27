@@ -30,6 +30,7 @@
 
 ## Статьи
 * [Материал из Википедии](http://ru.wikipedia.org/wiki/Golang)
+* [Язык Google Go: что говорят те, кто с ним работал?](http://blogerator.ru/page/jazyk-google-go-http-go-ru-chto-govorjat-te-kto-s-nim-rabotal) 27.05.2012
 * [Написание web-приложений на языке Go](http://netsago.org/ru/docs/print/1/17) 14.04.2011
 * [ЯП Go: Часть 1. Краткий обзор и основы программирования.](http://www.ibm.com/developerworks/ru/library/l-go_01/) 28.06.2011
 * [ЯП Go: Часть 2. Разработка Web-приложений.](http://www.ibm.com/developerworks/ru/library/l-go_02/) 30.06.2011

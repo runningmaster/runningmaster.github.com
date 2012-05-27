@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-05-21T13:17:30+03:00</updated>
+<updated>2012-05-27T16:34:15+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -16,7 +16,7 @@
 	<title>Полезные ссылки для изучения Go</title>
 	<link href="http://runningmaster.github.com/go-links.html"/>
 	<id>http://runningmaster.github.com/go-links</id>
-	<updated>2012-05-21T00:00:00</updated>
+	<updated>2012-05-27T00:00:00</updated>
 	<content type="html"><![CDATA[<p>Складываю в одно место ссылки, которые пригодятся в деле освоения этого языка или же освежения памяти по нему.</p>
 
 <h2>Официально</h2>
@@ -61,6 +61,7 @@
 
 <ul>
 <li><a href="http://ru.wikipedia.org/wiki/Golang">Материал из Википедии</a></li>
+<li><a href="http://blogerator.ru/page/jazyk-google-go-http-go-ru-chto-govorjat-te-kto-s-nim-rabotal">Язык Google Go: что говорят те, кто с ним работал?</a> 27.05.2012</li>
 <li><a href="http://netsago.org/ru/docs/print/1/17">Написание web-приложений на языке Go</a> 14.04.2011</li>
 <li><a href="http://www.ibm.com/developerworks/ru/library/l-go_01/">ЯП Go: Часть 1. Краткий обзор и основы программирования.</a> 28.06.2011</li>
 <li><a href="http://www.ibm.com/developerworks/ru/library/l-go_02/">ЯП Go: Часть 2. Разработка Web-приложений.</a> 30.06.2011</li>
