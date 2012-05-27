@@ -15,7 +15,7 @@
 [TODO][6]
 
 [0]: http://golang.org/
-[1]:http://www.sublimetext.com/2
+[1]: http://www.sublimetext.com/2
 [2]: http://ru.wikipedia.org/wiki/Markdown
 [3]: http://git-scm.com/
 [4]: http://pelican.notmyidea.org/

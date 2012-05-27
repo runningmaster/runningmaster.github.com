@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-05-27T23:59:35+03:00</updated>
+<updated>2012-05-28T00:57:03+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -11,6 +11,51 @@
 <id>http://runningmaster.github.com/</id>
 
 
+
+<entry>
+	<title>Выбор клиента Redis для Go</title>
+	<link href="http://runningmaster.github.com/go-redis.html"/>
+	<id>http://runningmaster.github.com/go-redis</id>
+	<updated>2012-05-28T00:00:00</updated>
+	<content type="html"><![CDATA[<p>Во весь рост встал вопрос выбора клиента для работы с <a href="http://redis.io/">Redis</a> в <a href="http://golang.org/">Go</a>. На странице доступных клиентов имеется на выбор четыре различных варианта от разных авторов:</p>
+
+<ul>
+<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
+<li><a href="http://code.google.com/p/tideland-rdc/">Tideland RDC</a></li>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+<li><a href="https://github.com/hoisie/redis.go">redis.go</a></li>
+</ul>
+
+<p>Какой выбрать? Один из линков оказался нерабочим, вероятно по причине переезда проекта на новое место: <a href="https://bitbucket.org/mendsley/tideland-rdc">Tideland RDC</a>. Также выяснилось, что этот драйвер не имеет поддержки релиза Go 1 и последний коммит в нем был осенью прошлого года - круг &ldquo;подозреваемых&rdquo; сократился до трех:</p>
+
+<ul>
+<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+<li><a href="https://github.com/hoisie/redis.go">redis.go</a></li>
+</ul>
+
+<p>Первое, что напрашивается - проверить активность работы над кодовой базой этих проектов. Сразу отпадает <a href="https://github.com/hoisie/redis.go">redis.go</a> - в нем последние коммиты были год и два года назад, а с тех пор много воды утекло - вычеркиваем:</p>
+
+<ul>
+<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+</ul>
+
+<p>Какой из двух оставшися подойдет? Смотрим какой на вид проще будет (грубо). Вроде как последний:</p>
+
+<ul>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+</ul>
+
+<p>Итак, я определился и начал &ldquo;примеряться&rdquo; к этому драйверу. На странице у автора увидел, что он имеет форк еще на один драйвер, который не упомянут на официальной странице производителя БД. Этот форк оказался форком форка и по цепочке я вышел на оригинальный репозиторий <a href="https://github.com/fzzbt/radix">radix</a> и еще нашел от автора <a href="http://groups.google.com/group/redis-db/browse_thread/thread/956b6d83b5f87f79">анонс</a> драйвера в группе рассылки Redis-DB. Драйвер оказался форком вычеркнутого первым <a href="http://code.google.com/p/tideland-rdc/">Tideland RDC</a>, однако, зело отрефакторенным и очень активно на сейчас развиваемым.</p>
+
+<p>Итак, выбор сделан:</p>
+
+<p><a href="https://github.com/fzzbt/radix">radix</a></p>
+
+<p>Будем работать :)</p>
+]]></content>
+</entry>
 
 <entry>
 	<title>Полезные ссылки для изучения Go</title>

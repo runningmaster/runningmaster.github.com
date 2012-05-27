@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+ 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ 	<title>runningmaster's githublog : Выбор клиента Redis для Go</title>
+ 	<link rel="stylesheet" href="./src/dsgn.css" type="text/css" media="screen, projection" />
+ 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" />
+ 	<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" />
+ 	<link href="/img/favicon.png" rel="icon" />
+ 	<link rel="alternate" title="runningmaster's githublog" href="/feed.xml" type="application/atom+xml">
+ 	<!--
+ 	<link rel="stylesheet" type="text/css" href="/css/highlight.css" />
+ 	-->
+ 	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31528830-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>  
+</head>
+
+<body>
+	<a href="http://runningmaster.github.com/" title="Home" id="img_logo"></a>
+	<a href="http://github.com/runningmaster/" title="Fork me on GitHub" id="img_fork"></a>
+	<a href="/feed.xml" title="Feed" id="img_feed"></a>
+	<a href="mailto:runningmaster@gmail.com" title="Mail" id="img_mail"></a>
+ 	<div class="site">
+		<div class="menu">
+			<a href=".">home</a> | 
+			<a href="./ubuntu.html">ubuntu</a> | 
+			<a href="./about.html">about</a>
+		</div>
+		<div id="home">
+			
+			<div class="title"> 
+				2012-05-28
+			</div>
+			<h1>Выбор клиента Redis для Go</h1>
+			<div id="post">
+				<p>Во весь рост встал вопрос выбора клиента для работы с <a href="http://redis.io/">Redis</a> в <a href="http://golang.org/">Go</a>. На странице доступных клиентов имеется на выбор четыре различных варианта от разных авторов:</p>
+
+<ul>
+<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
+<li><a href="http://code.google.com/p/tideland-rdc/">Tideland RDC</a></li>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+<li><a href="https://github.com/hoisie/redis.go">redis.go</a></li>
+</ul>
+
+<p>Какой выбрать? Один из линков оказался нерабочим, вероятно по причине переезда проекта на новое место: <a href="https://bitbucket.org/mendsley/tideland-rdc">Tideland RDC</a>. Также выяснилось, что этот драйвер не имеет поддержки релиза Go 1 и последний коммит в нем был осенью прошлого года - круг &ldquo;подозреваемых&rdquo; сократился до трех:</p>
+
+<ul>
+<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+<li><a href="https://github.com/hoisie/redis.go">redis.go</a></li>
+</ul>
+
+<p>Первое, что напрашивается - проверить активность работы над кодовой базой этих проектов. Сразу отпадает <a href="https://github.com/hoisie/redis.go">redis.go</a> - в нем последние коммиты были год и два года назад, а с тех пор много воды утекло - вычеркиваем:</p>
+
+<ul>
+<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+</ul>
+
+<p>Какой из двух оставшися подойдет? Смотрим какой на вид проще будет (грубо). Вроде как последний:</p>
+
+<ul>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+</ul>
+
+<p>Итак, я определился и начал &ldquo;примеряться&rdquo; к этому драйверу. На странице у автора увидел, что он имеет форк еще на один драйвер, который не упомянут на официальной странице производителя БД. Этот форк оказался форком форка и по цепочке я вышел на оригинальный репозиторий <a href="https://github.com/fzzbt/radix">radix</a> и еще нашел от автора <a href="http://groups.google.com/group/redis-db/browse_thread/thread/956b6d83b5f87f79">анонс</a> драйвера в группе рассылки Redis-DB. Драйвер оказался форком вычеркнутого первым <a href="http://code.google.com/p/tideland-rdc/">Tideland RDC</a>, однако, зело отрефакторенным и очень активно на сейчас развиваемым.</p>
+
+<p>Итак, выбор сделан:</p>
+
+<p><a href="https://github.com/fzzbt/radix">radix</a></p>
+
+<p>Будем работать :)</p>
+
+			</div>
+			
+			<h1>Комментарии</h1>
+			<div id="disqus_thread"></div>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    var disqus_shortname = 'runningmastersgithublog';
+			    var disqus_developer = 0;
+			    var disqus_identifier = 'go-redis';
+			    var disqus_url = 'http://runningmaster.github.com/go-redis.html';
+			    var disqus_script = 'embed.js';
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<div class="post_footer">
+				<a href="http://disqus.com">Powered by Disqus</a>
+			</div>
+			
+			<div class="footer">
+				<div class="contact">
+					&copy; 2012
+					<a href="mailto:runningmaster@gmail.com" title="Написать письмо">Dmitriy Kovalenko</a> | <a href="/feed.xml" rel="subscribe-rss" title="Подписаться через RSS">RSS</a> | <a href="http://github.com/runningmaster/runningmaster.github.com/blob/master/src/main.go" title="Посмотреть код">Made on Go</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>
