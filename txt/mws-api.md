@@ -11,12 +11,12 @@
 
 2. API идентификация реализуется через параметры методов:
 
-	* `auth` (string) - выдается при регистрации клиента и идентифицирует его
-	* `pass` (string) - рассчитывается по одинаковому алгоритму (как на стороне клиента, так и на стороне сервера) на основе секретного ключа, уникального для каждого клиента
+	* `pkey` (string) - `public key` выдается при регистрации клиента и идентифицирует его
+	* `psum` (string) - `public sum` рассчитывается по одинаковому алгоритму (как на стороне клиента, так и на стороне сервера) на основе секретного ключа `secret key`, уникального для каждого клиента
 
-	`GET` `<auth_params> => auth=public_key&pass=sha1(secret_key+public_key)`
+	`GET`  `<auth_params> => pkey=public_key&psum=sha1(secret_key+public_key)`
 	
-	`POST` `<auth_params> => auth=public_key&pass=sha1(secret_key+post_data)`
+	`POST` `<auth_params> => pkey=public_key&psum=sha1(secret_key+post_data)`
 	
 3. API определяется следующим общим url-форматом:
 
@@ -37,7 +37,7 @@
 	Создает или обновляет аутентификацию как пару хеш-ключей - публичного `pkey` (string) и секретного `skey` (string):
 
 	```
-	POST https://api.morion.ua/ld1/auth/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/auth/set?pkey=1243b7cd&psum=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
@@ -51,7 +51,7 @@
 	Удаляет аутентификацию по публичному ключу `pkey` (string):
 
 	```
-	POST https://api.morion.ua/ld1/auth/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/auth/del?pkey=1243b7cd&psum=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
@@ -68,7 +68,7 @@
 	`type=720fc5af` - например, чек из аптеки в `json`:
 
 	```
-	POST https://api.morion.ua/ld1/data/add?auth=1243b7cd&pass=811ede49&type=720fc5af HTTP/1.1
+	POST https://api.morion.ua/ld1/data/add?pkey=1243b7cd&psum=811ede49&type=720fc5af HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -82,7 +82,7 @@
 	`type=1a383386` - что-то еще, например прайс-лист в `csv`:
 
 	```
-	POST https://api.morion.ua/ld1/data/add?auth=1243b7cd&pass=811ede49&type=1a383386 HTTP/1.1
+	POST https://api.morion.ua/ld1/data/add?pkey=1243b7cd&psum=811ede49&type=1a383386 HTTP/1.1
 	Content-Type: text/csv
 
 	blah;blah;blah;blah;blah;
@@ -95,7 +95,7 @@
 	`type=e17370c5` - или же можно принимать `xmmo`: 
 
 	```
-	POST https://api.morion.ua/ld1/data/add?auth=1243b7cd&pass=811ede49&type=e17370c5 HTTP/1.1
+	POST https://api.morion.ua/ld1/data/add?pkey=1243b7cd&psum=811ede49&type=e17370c5 HTTP/1.1
 	Content-Type: text/xml
 
 	<?xml version="1.0"?>
@@ -118,7 +118,7 @@
 	Устанавливает для контрольной суммы `sha` (string) ссылку на новое значение эталонного ключа `new` (Int64):
 
 	```
-	POST https://api.morion.ua/ld1/link/set?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/link/set?pkey=1243b7cd&psum=811ede49 HTTP/1.1
 	Content-Type: application/json
 	
 	{
@@ -132,7 +132,7 @@
 	Удаляет ссылку для контрольной суммы `sha` (string):
 
 	```
-	POST https://api.morion.ua/ld1/link/del?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/link/del?pkey=1243b7cd&psum=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -145,7 +145,7 @@
 	Обновляет все ссылки на эталонный ключ `old` (Int64) на его новое значение `id_new` (Int64):
 
 	```
-	POST https://api.morion.ua/ld1/link/sets?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/link/sets?pkey=1243b7cd&psum=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
@@ -159,7 +159,7 @@
 	Удаляет все ссылки на эталонный ключ `old` (Int64):
 
 	```
-	POST https://api.morion.ua/ld1/link/dels?auth=1243b7cd&pass=811ede49 HTTP/1.1
+	POST https://api.morion.ua/ld1/link/dels?pkey=1243b7cd&psum=811ede49 HTTP/1.1
 	Content-Type: application/json
 
 	{
