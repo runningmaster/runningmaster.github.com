@@ -24,9 +24,9 @@
 
 Итак, выбор сделан:
 
-[radix][5]
+* [radix][5]
 
-Будем работать :)
+Будем работать...
 
 [1]: https://github.com/alphazero/Go-Redis
 [2]: http://code.google.com/p/tideland-rdc/
