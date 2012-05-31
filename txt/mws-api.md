@@ -14,14 +14,12 @@
 	* `pkey` (string) - `public key` выдается при регистрации клиента и идентифицирует его
 	* `psum` (string) - `public sum` рассчитывается по одинаковому алгоритму (как на стороне клиента, так и на стороне сервера) на основе секретного ключа `secret key`, уникального для каждого клиента
 
-	`GET`  `<auth_params> => pkey=public_key&psum=sha1(secret_key+public_key)`
-	
-	`POST` `<auth_params> => pkey=public_key&psum=sha1(secret_key+post_data)`
+	`<auth_params> => pkey=public_key&psum=sha1(public_key+secret_key)`
 	
 3. API определяется следующим общим url-форматом:
 
 	```
-	https://api.{domain}/{service+version}/{aspect}/{action}[?<authparams>&key=value&...]
+	https://api.{domain}/{service+version}/{aspect}/{action}[?<authparams>&key=value ...]
 	```
 
 4. API предпочитает формат данных `application/json` (см. [JSON](http://json.org/)), как для приема, так и для передачи данных. В специальных же случаях может быть оговорен другой тип (см. [Content-Type](http://en.wikipedia.org/wiki/Mime_type)), например, `text/csv` для исторической поддержки определенного вида информации.

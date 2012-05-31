@@ -63,13 +63,11 @@
 <li><code>psum</code> (string) - <code>public sum</code> рассчитывается по одинаковому алгоритму (как на стороне клиента, так и на стороне сервера) на основе секретного ключа <code>secret key</code>, уникального для каждого клиента</li>
 </ul>
 
-<p><code>GET</code>  <code>&lt;auth_params&gt; =&gt; pkey=public_key&amp;psum=sha1(secret_key+public_key)</code></p>
-
-<p><code>POST</code> <code>&lt;auth_params&gt; =&gt; pkey=public_key&amp;psum=sha1(secret_key+post_data)</code></p></li>
+<p><code>&lt;auth_params&gt; =&gt; pkey=public_key&amp;psum=sha1(public_key+secret_key)</code></p></li>
 
 <li><p>API определяется следующим общим url-форматом:</p>
 
-<pre><code>https://api.{domain}/{service+version}/{aspect}/{action}[?&lt;authparams&gt;&amp;key=value&amp;...]
+<pre><code>https://api.{domain}/{service+version}/{aspect}/{action}[?&lt;authparams&gt;&amp;key=value ...]
 </code></pre></li>
 
 <li><p>API предпочитает формат данных <code>application/json</code> (см. <a href="http://json.org/">JSON</a>), как для приема, так и для передачи данных. В специальных же случаях может быть оговорен другой тип (см. <a href="http://en.wikipedia.org/wiki/Mime_type">Content-Type</a>), например, <code>text/csv</code> для исторической поддержки определенного вида информации.</p></li>
