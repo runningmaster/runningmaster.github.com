@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+ 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ 	<title>runningmaster's githublog : Morion Request for Comments (Draft)</title>
+ 	<link rel="stylesheet" href="./src/dsgn.css" type="text/css" media="screen, projection" />
+ 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" />
+ 	<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" />
+ 	<link href="/img/favicon.png" rel="icon" />
+ 	<link rel="alternate" title="runningmaster's githublog" href="/feed.xml" type="application/atom+xml">
+ 	<!--
+ 	<link rel="stylesheet" type="text/css" href="/css/highlight.css" />
+ 	-->
+ 	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31528830-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>  
+</head>
+
+<body>
+	<a href="http://runningmaster.github.com/" title="Home" id="img_logo"></a>
+	<a href="http://github.com/runningmaster/" title="Fork me on GitHub" id="img_fork"></a>
+	<a href="/feed.xml" title="Feed" id="img_feed"></a>
+	<a href="mailto:runningmaster@gmail.com" title="Mail" id="img_mail"></a>
+ 	<div class="site">
+		<div class="menu">
+			<a href=".">home</a> | 
+			<a href="./ubuntu.html">ubuntu</a> | 
+			<a href="./about.html">about</a>
+		</div>
+		<div id="home">
+			
+			<div class="title"> 
+				page
+			</div>
+			<h1>Morion Request for Comments (Draft)</h1>
+			<div id="post">
+				<h2>Введение</h2>
+
+<p>Настоящим предлагается упростить процесс разработки проектной документации, повторно используя сложившийся за десятилетия мировой опыт. За основу идеи намекается взять стандарты Интернета <a href="http://ru.wikipedia.org/wiki/RFC">RFC</a> (Request for Comments), а также документацию <a href="http://www.python.org/dev/peps/">PEP</a> (Python Enhancement Proposals) и на базе этих концепций принять основные соглашения по разработке и поддержке документирующих текстов с целью противостояния излишнему усложнению и/или бессмысленной бюрократии.</p>
+
+<h2>Соглашения</h2>
+
+<ul>
+<li><p>Документация имеет текстовый формат для простого и удобного ее сопровождения любым человеком, в любом текстовом редакторе, с поддержкой одновременной работы нескольких человек над одним документом с возможностью видеть разницу изменений текста каждым автором, а также всю историю таких изменений.</p></li>
+
+<li><p>Документация не имеет какой-либо иерархии в явном виде и также не связана явно с каким-то конкретным проектом. Документация хранится как набор простых документов, имеющих каждый свой номер, в общедоступной для всех участников системе контроля версий. Для этого делается отдельный git-репозиторий. Если требуется объединить отдельные документы на основе какого-нибудь смысла, то это делается отдельными индексными файлами.</p></li>
+
+<li><p>Документ это просто текстовый файл в разметке <a href="http://ru.wikipedia.org/wiki/Markdown">Markdown</a> (для простых случаев) или <a href="http://ru.wikipedia.org/wiki/ReStructuredText">ReStructuredText</a> (для сложных случаев). Таким образом, структура и текст априори будет отделен от дизайна документа (его внешнего вида). Каждый документ имеет свой отдельный номер и всегда можно дать на него ссылку из любого места, как на источник информации по искомому вопросу. Документ легко может быть преобразован в любой вид и даже формат специальным инструментарием без изменения своей структуры.</p></li>
+</ul>
+
+<h2>Решение</h2>
+
+<ol>
+<li><p>Создать репозиторий:</p>
+
+<pre><code>https://github.com/morion-ua/mrfc
+</code></pre></li>
+
+<li><p>Именовать файлы документов по схеме:</p>
+
+<pre><code>00000.&lt;md|rst&gt;
+</code></pre></li>
+</ol>
+
+<p>Таким образом, постоянная ссылка на конкретный документ <code>MRFC 1</code> будет иметь вид:
+<code>https://github.com/morion-ua/mrfc/blob/master/00001.md</code>.</p>
+
+<p>Настоящий файл является наглядным примером создания таких файлов.</p>
+
+			</div>
+			
+			<div class="footer">
+				<div class="contact">
+					&copy; 2012
+					<a href="mailto:runningmaster@gmail.com" title="Написать письмо">Dmitriy Kovalenko</a> | <a href="/feed.xml" rel="subscribe-rss" title="Подписаться через RSS">RSS</a> | <a href="http://github.com/runningmaster/runningmaster.github.com/blob/master/src/main.go" title="Посмотреть код">Made on Go</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>

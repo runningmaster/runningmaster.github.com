@@ -41,5 +41,10 @@
 	{
 		"Name": "Morion Web Services API (Draft)",
 		"File": "mws-api"
+	},
+
+	{
+		"Name": "Morion Request for Comments (Draft)",
+		"File": "mws-rfc"
 	}
 ]
