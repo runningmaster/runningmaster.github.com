@@ -27,10 +27,11 @@
 Таким образом, постоянная ссылка на конкретный документ `MRFC 1` будет иметь вид:
 `https://github.com/morion-ua/mrfc/blob/master/00001.md`. 
 
-Настоящий файл является наглядным примером создания таких файлов.
+Настоящий файл является наглядным примером создания таких файлов. И как оказалось, физически, такая идея уже [реализована][4] как git-основаная wiki. Это означает, что работать над текстами можно, как в любом текстовом редакторе, так и через специализированный редактор и интерфейс в браузере.
 
 
 [0]: http://ru.wikipedia.org/wiki/RFC
 [1]: http://www.python.org/dev/peps/ 
 [2]: http://ru.wikipedia.org/wiki/Markdown
 [3]: http://ru.wikipedia.org/wiki/ReStructuredText
+[4]: https://github.com/blog/699-making-github-more-open-git-backed-wikis
