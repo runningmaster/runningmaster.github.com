@@ -1,5 +1,11 @@
 [
 	{
+		"Name": "Go 1 официально в Ubuntu 12.04 (ppa)",
+		"Date": "2012-06-15",
+		"File": "go-ppa"
+	},
+
+	{
 		"Name": "Выбор клиента Redis для Go",
 		"Date": "2012-05-28",
 		"File": "go-redis"

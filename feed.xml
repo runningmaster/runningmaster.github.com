@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-05-29T00:25:50+03:00</updated>
+<updated>2012-06-15T15:47:21+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -11,6 +11,28 @@
 <id>http://runningmaster.github.com/</id>
 
 
+
+<entry>
+	<title>Go 1 официально в Ubuntu 12.04 (ppa)</title>
+	<link href="http://runningmaster.github.com/go-ppa.html"/>
+	<id>http://runningmaster.github.com/go-ppa</id>
+	<updated>2012-06-15T00:00:00</updated>
+	<content type="html"><![CDATA[<p>А мужики-то не знают (с). Выполнить в терминале:
+<pre>
+sudo add-apt-repository ppa:gophers/go
+sudo apt-get update &amp;&amp; sudo apt-get install golang-stable
+</pre></p>
+
+<p>Для получения версии с самыми последними изменениями следует заменить название пакета <code>golang-stable</code> на <code>golang-tip</code>.</p>
+
+<p>См. также:</p>
+
+<ul>
+<li><a href="https://wiki.ubuntu.com/Go">Go - UbuntuWiki</a></li>
+<li><a href="https://launchpad.net/~gophers/+archive/go">Go Language Packages (GC)</a></li>
+</ul>
+]]></content>
+</entry>
 
 <entry>
 	<title>Выбор клиента Redis для Go</title>
@@ -71,6 +93,9 @@
 <ul>
 <li><a href="http://golang.org/">The Go Programming Language</a></li>
 <li><a href="http://blog.golang.org/">The Go Programming Language Blog</a></li>
+<li><a href="https://groups.google.com/forum/?fromgroups#!forum/golang-nuts">The Go Programming Language Group (general discussion list)</a></li>
+<li><a href="https://groups.google.com/forum/#!forum/golang-announce">The Go Programming Language Group (announcements)</a></li>
+<li><a href="https://groups.google.com/forum/?fromgroups#!forum/golang-dev">The Go Programming Language Group (development)</a></li>
 <li><a href="http://code.google.com/p/go-wiki/w/list">Go Language Community Wiki</a></li>
 <li><a href="http://play.golang.org/">Go Playground</a> (выполняй и шарь код в браузере)</li>
 </ul>
