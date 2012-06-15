@@ -1,20 +1,26 @@
 [
 	{
+		"Name": "Обновление Go 1 (go1.0.2)",
+		"Date": "2012-06-15",
+		"File": "go-ann"
+	},
+
+	{
 		"Name": "Go 1 официально в Ubuntu 12.04 (ppa)",
 		"Date": "2012-06-15",
 		"File": "go-ppa"
 	},
 
 	{
-		"Name": "Выбор клиента Redis для Go",
-		"Date": "2012-05-28",
-		"File": "go-redis"
+		"Name": "Полезные ссылки для изучения Go",
+		"Date": "2012-06-15",
+		"File": "go-links"
 	},
 
 	{
-		"Name": "Полезные ссылки для изучения Go",
-		"Date": "2012-05-27",
-		"File": "go-links"
+		"Name": "Выбор клиента Redis для Go",
+		"Date": "2012-05-28",
+		"File": "go-redis"
 	},
 
 	{

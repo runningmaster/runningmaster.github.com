@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-06-15T15:47:21+03:00</updated>
+<updated>2012-06-15T16:25:34+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -11,6 +11,22 @@
 <id>http://runningmaster.github.com/</id>
 
 
+
+<entry>
+	<title>Обновление Go 1 (go1.0.2)</title>
+	<link href="http://runningmaster.github.com/go-ann.html"/>
+	<id>http://runningmaster.github.com/go-ann</id>
+	<updated>2012-06-15T00:00:00</updated>
+	<content type="html"><![CDATA[<p>С момента выпуска релиза Go 1 (28.03.2012) тихо и незаметно вышли уже два минорных обновления <code>go1.0.1</code> (27.04.2012 <a href="https://groups.google.com/forum/#!topic/golang-announce/2ufDgIGFFTk">что нового?</a>)  и <code>go1.0.2</code> (14.06.2012 <a href="https://groups.google.com/forum/#!topic/golang-announce/9-f_fnXNDzw">что нового?</a>)</p>
+
+<p>Следует отметить значительный <a href="http://code.google.com/p/go/source/list">траффик</a> изменений в исходном коде проекта, как по частоте коммитов так и по их авторству.</p>
+
+<pre>
+$ go version
+go version go1.0.2
+</pre>
+]]></content>
+</entry>
 
 <entry>
 	<title>Go 1 официально в Ubuntu 12.04 (ppa)</title>
@@ -35,57 +51,10 @@ sudo apt-get update &amp;&amp; sudo apt-get install golang-stable
 </entry>
 
 <entry>
-	<title>Выбор клиента Redis для Go</title>
-	<link href="http://runningmaster.github.com/go-redis.html"/>
-	<id>http://runningmaster.github.com/go-redis</id>
-	<updated>2012-05-28T00:00:00</updated>
-	<content type="html"><![CDATA[<p>Во весь рост встал вопрос выбора клиента для работы с <a href="http://redis.io/">Redis</a> в <a href="http://golang.org/">Go</a>. На странице доступных клиентов имеется на выбор четыре различных варианта от разных авторов:</p>
-
-<ul>
-<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
-<li><a href="http://code.google.com/p/tideland-rdc/">Tideland RDC</a></li>
-<li><a href="https://github.com/simonz05/godis">godis</a></li>
-<li><a href="https://github.com/hoisie/redis.go">redis.go</a></li>
-</ul>
-
-<p>Какой выбрать? Один из линков оказался нерабочим, вероятно по причине переезда проекта на новое место: <a href="https://bitbucket.org/mendsley/tideland-rdc">Tideland RDC</a>. Также выяснилось, что этот драйвер не имеет поддержки релиза Go 1 и последний коммит в нем был осенью прошлого года - круг &ldquo;подозреваемых&rdquo; сократился до трех:</p>
-
-<ul>
-<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
-<li><a href="https://github.com/simonz05/godis">godis</a></li>
-<li><a href="https://github.com/hoisie/redis.go">redis.go</a></li>
-</ul>
-
-<p>Первое, что напрашивается - проверить активность работы над кодовой базой этих проектов. Сразу отпадает <a href="https://github.com/hoisie/redis.go">redis.go</a> - в нем последние коммиты были год и два года назад, а с тех пор много воды утекло - вычеркиваем и остается два:</p>
-
-<ul>
-<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
-<li><a href="https://github.com/simonz05/godis">godis</a></li>
-</ul>
-
-<p>Какой из двух оставшися подойдет? Смотрим какой на вид проще будет (грубо). Вроде как последний:</p>
-
-<ul>
-<li><a href="https://github.com/simonz05/godis">godis</a></li>
-</ul>
-
-<p>Итак, я определился и начал &ldquo;примеряться&rdquo; к этому драйверу. На странице у автора увидел, что он имеет форк еще на один драйвер, который не упомянут на официальной странице производителя БД. Этот форк оказался форком форка и по цепочке я вышел на оригинальный репозиторий <a href="https://github.com/fzzbt/radix">radix</a> и еще нашел от автора <a href="http://groups.google.com/group/redis-db/browse_thread/thread/956b6d83b5f87f79">анонс</a> драйвера в группе рассылки Redis-DB. Драйвер оказался форком вычеркнутого первым <a href="http://code.google.com/p/tideland-rdc/">Tideland RDC</a>, однако, зело отрефакторенным и очень активно на сейчас развиваемым.</p>
-
-<p>Итак, выбор сделан:</p>
-
-<ul>
-<li><a href="https://github.com/fzzbt/radix">radix</a></li>
-</ul>
-
-<p>Будем работать&hellip;</p>
-]]></content>
-</entry>
-
-<entry>
 	<title>Полезные ссылки для изучения Go</title>
 	<link href="http://runningmaster.github.com/go-links.html"/>
 	<id>http://runningmaster.github.com/go-links</id>
-	<updated>2012-05-27T00:00:00</updated>
+	<updated>2012-06-15T00:00:00</updated>
 	<content type="html"><![CDATA[<p>Складываю в одно место ссылки, которые пригодятся в деле освоения этого языка или же освежения памяти по нему.</p>
 
 <h2>Официально</h2>
@@ -93,6 +62,7 @@ sudo apt-get update &amp;&amp; sudo apt-get install golang-stable
 <ul>
 <li><a href="http://golang.org/">The Go Programming Language</a></li>
 <li><a href="http://blog.golang.org/">The Go Programming Language Blog</a></li>
+<li><a href="https://plus.google.com/u/0/101406623878176903605/posts">The Go Programming Language +1</a></li>
 <li><a href="https://groups.google.com/forum/?fromgroups#!forum/golang-nuts">The Go Programming Language Group (general discussion list)</a></li>
 <li><a href="https://groups.google.com/forum/#!forum/golang-announce">The Go Programming Language Group (announcements)</a></li>
 <li><a href="https://groups.google.com/forum/?fromgroups#!forum/golang-dev">The Go Programming Language Group (development)</a></li>
@@ -143,6 +113,53 @@ sudo apt-get update &amp;&amp; sudo apt-get install golang-stable
 <li><a href="http://netsago.org/ru/docs/print/1/16">Go для программистов C++</a> 29.09.2010</li>
 <li><a href="http://eao197.narod.ru/desc/short_effective_go.html">Краткий пересказ Effective Go на русском языке</a> 19.11.2009</li>
 </ul>
+]]></content>
+</entry>
+
+<entry>
+	<title>Выбор клиента Redis для Go</title>
+	<link href="http://runningmaster.github.com/go-redis.html"/>
+	<id>http://runningmaster.github.com/go-redis</id>
+	<updated>2012-05-28T00:00:00</updated>
+	<content type="html"><![CDATA[<p>Во весь рост встал вопрос выбора клиента для работы с <a href="http://redis.io/">Redis</a> в <a href="http://golang.org/">Go</a>. На странице доступных клиентов имеется на выбор четыре различных варианта от разных авторов:</p>
+
+<ul>
+<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
+<li><a href="http://code.google.com/p/tideland-rdc/">Tideland RDC</a></li>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+<li><a href="https://github.com/hoisie/redis.go">redis.go</a></li>
+</ul>
+
+<p>Какой выбрать? Один из линков оказался нерабочим, вероятно по причине переезда проекта на новое место: <a href="https://bitbucket.org/mendsley/tideland-rdc">Tideland RDC</a>. Также выяснилось, что этот драйвер не имеет поддержки релиза Go 1 и последний коммит в нем был осенью прошлого года - круг &ldquo;подозреваемых&rdquo; сократился до трех:</p>
+
+<ul>
+<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+<li><a href="https://github.com/hoisie/redis.go">redis.go</a></li>
+</ul>
+
+<p>Первое, что напрашивается - проверить активность работы над кодовой базой этих проектов. Сразу отпадает <a href="https://github.com/hoisie/redis.go">redis.go</a> - в нем последние коммиты были год и два года назад, а с тех пор много воды утекло - вычеркиваем и остается два:</p>
+
+<ul>
+<li><a href="https://github.com/alphazero/Go-Redis">Go-Redis</a></li>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+</ul>
+
+<p>Какой из двух оставшися подойдет? Смотрим какой на вид проще будет (грубо). Вроде как последний:</p>
+
+<ul>
+<li><a href="https://github.com/simonz05/godis">godis</a></li>
+</ul>
+
+<p>Итак, я определился и начал &ldquo;примеряться&rdquo; к этому драйверу. На странице у автора увидел, что он имеет форк еще на один драйвер, который не упомянут на официальной странице производителя БД. Этот форк оказался форком форка и по цепочке я вышел на оригинальный репозиторий <a href="https://github.com/fzzbt/radix">radix</a> и еще нашел от автора <a href="http://groups.google.com/group/redis-db/browse_thread/thread/956b6d83b5f87f79">анонс</a> драйвера в группе рассылки Redis-DB. Драйвер оказался форком вычеркнутого первым <a href="http://code.google.com/p/tideland-rdc/">Tideland RDC</a>, однако, зело отрефакторенным и очень активно на сейчас развиваемым.</p>
+
+<p>Итак, выбор сделан:</p>
+
+<ul>
+<li><a href="https://github.com/fzzbt/radix">radix</a></li>
+</ul>
+
+<p>Будем работать&hellip;</p>
 ]]></content>
 </entry>
 
