@@ -4,6 +4,9 @@
 
 * [The Go Programming Language](http://golang.org/)
 * [The Go Programming Language Blog](http://blog.golang.org/)
+* [The Go Programming Language Group (general discussion list)](https://groups.google.com/forum/?fromgroups#!forum/golang-nuts)
+* [The Go Programming Language Group (announcements)](https://groups.google.com/forum/#!forum/golang-announce)
+* [The Go Programming Language Group (development)](https://groups.google.com/forum/?fromgroups#!forum/golang-dev)
 * [Go Language Community Wiki](http://code.google.com/p/go-wiki/w/list)
 * [Go Playground](http://play.golang.org/) (выполняй и шарь код в браузере)
 
