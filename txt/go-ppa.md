@@ -1,4 +1,4 @@
-А мужики-то не знают (с). Выполнить в терминале:
+А мужики-то не знают (с):
 <pre>
 sudo add-apt-repository ppa:gophers/go
 sudo apt-get update && sudo apt-get install golang-stable
