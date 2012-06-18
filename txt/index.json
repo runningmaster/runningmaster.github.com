@@ -6,7 +6,7 @@
 	},
 
 	{
-		"Name": "Go 1 официально в Ubuntu 12.04 (ppa)",
+		"Name": "Ubuntu 12.04 и Go 1 (ppa)",
 		"Date": "2012-06-15",
 		"File": "go-ppa"
 	},
