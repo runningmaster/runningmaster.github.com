@@ -42,7 +42,7 @@
 			</div>
 			<ul class="posts">
 				{{range .Posts}}{{if .Date}}
-				<li id="post_{{.Indx}}">
+				<li id="{{.File}}">
 					<span>{{.Date}}</span> 
 					&raquo; 
 					<a href="{{.File}}{{`.html`}}">{{html .Name}}</a>
