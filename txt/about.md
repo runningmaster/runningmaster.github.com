@@ -1,2 +1,1 @@
-![QRCode](./img/code.png)
-FIXME
+![QR Code](./img/code.png "QR Code") 
