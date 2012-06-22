@@ -1,17 +1,18 @@
 [
 	{
 		"Name": "Правило №1 Компании",
+		"Date": "2012-06-22",
 		"File": "rule-number-one"
 	},
 
 	{
-		"Name": "Обновление Go 1 (go1.0.2)",
+		"Name": "Обновления Go 1",
 		"Date": "2012-06-15",
 		"File": "go-ann"
 	},
 
 	{
-		"Name": "Ubuntu 12.04 и Go 1 (ppa)",
+		"Name": "Ubuntu 12.04 и Go 1 PPA",
 		"Date": "2012-06-15",
 		"File": "go-ppa"
 	},
