@@ -1,8 +1,14 @@
 [
 	{
+		"Name": "Указ Петра I по Офису",
+		"Date": "2012-06-22",
+		"File": "off-decree-peter"
+	},
+
+	{
 		"Name": "Правило №1 Компании",
 		"Date": "2012-06-22",
-		"File": "rule-number-one"
+		"File": "off-rule-one"
 	},
 
 	{
