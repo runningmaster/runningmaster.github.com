@@ -10,6 +10,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"runtime"
 	"text/template"
 	"time"
 )
@@ -74,7 +75,7 @@ func applyTemplate(filename string, data interface{}) []byte {
 	return buf.Bytes()
 }
 
-func createAtomFeed(posts *Posts) {
+func createAtomFeed(posts *Posts, c chan<- string) {
 	d := struct {
 		Site  string
 		Host  string
@@ -93,9 +94,10 @@ func createAtomFeed(posts *Posts) {
 
 	err := ioutil.WriteFile(filepath.Join(out, "feed.xml"), applyTemplate("atom.xml", &d), os.ModePerm)
 	panicIfError(err)
+	c <- "createAtomFeed done"
 }
 
-func createHomePage(posts *Posts) {
+func createHomePage(posts *Posts, c chan<- string) {
 	d := struct {
 		Site  string
 		Host  string
@@ -116,9 +118,10 @@ func createHomePage(posts *Posts) {
 
 	err := ioutil.WriteFile(filepath.Join(out, "index.html"), applyTemplate("dsgn.html", &d), os.ModePerm)
 	panicIfError(err)
+	c <- "createHomePage done"
 }
 
-func createPostPage(post *Post) {
+func createPostPage(post *Post, c chan<- string) {
 	body, err := ioutil.ReadFile(filepath.Join(txt, post.File+".md"))
 	panicIfError(err)
 
@@ -147,31 +150,38 @@ func createPostPage(post *Post) {
 
 	err = ioutil.WriteFile(filepath.Join(out, post.File+".html"), applyTemplate("dsgn.html", &d), os.ModePerm)
 	panicIfError(err)
-}
-
-func goTextToBlog() {
-	posts := make(Posts, 0)
-	posts.initFromFile(filepath.Join(txt, "index.json"))
-
-	for _, post := range posts {
-		createPostPage(post)
-	}
-
-	createAtomFeed(&posts)
-	createHomePage(&posts)
+	c <- "createPostPage done " + post.File
 }
 
 func main() {
 	t0 := time.Now()
 	fmt.Println("\nElementary static blog generator\nCopyright (c) 2012 by Dmitriy Kovalenko\n")
 
-	goTextToBlog()
+	posts := make(Posts, 0)
+	posts.initFromFile(filepath.Join(txt, "index.json"))
+
+	c := make(chan string)
+	n := 0
+	for _, post := range posts {
+		n++
+		go createPostPage(post, c)
+	}
+
+	n++
+	go createAtomFeed(&posts, c)
+	n++
+	go createHomePage(&posts, c)
+
+	for i := 0; i < n; i++ {
+		fmt.Println(<-c)
+	}
 
 	t1 := time.Now()
 	fmt.Printf("Elapsed time %s\n", t1.Sub(t0))
 }
 
 func init() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	src = filepath.Dir(".")
 	out = filepath.Join(src, "../")
 	txt = filepath.Join(out, "txt")
