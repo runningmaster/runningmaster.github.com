@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-06-26T00:20:17+03:00</updated>
+<updated>2012-06-26T01:14:31+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -11,6 +11,17 @@
 <id>http://runningmaster.github.com/</id>
 
 
+
+<entry>
+	<title>Принцип №1</title>
+	<link href="http://runningmaster.github.com/off-principle-one.html"/>
+	<id>http://runningmaster.github.com/off-principle-one</id>
+	<updated>2012-06-26T00:00:00</updated>
+	<content type="html"><![CDATA[<p><strong>В качестве универсального принципа, руководящего работой мышления и творчества, остается лишь тенденция к поискам возможно более простых решений.</strong></p>
+
+<p>Письмо академика А. Н. Колмогорова 27 августа 1963 г. <a href="http://www.psychology-online.net/link.php?id=142">полностью</a>.</p>
+]]></content>
+</entry>
 
 <entry>
 	<title>Sublime Text 2 как редактор для Go</title>
