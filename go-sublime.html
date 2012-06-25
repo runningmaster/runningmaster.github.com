@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+ 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ 	<title>runningmaster's githublog : Sublime Text 2 как редактор для Go</title>
+ 	<link rel="stylesheet" href="./src/dsgn.css" type="text/css" media="screen, projection" />
+ 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" />
+ 	<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" />
+ 	<link href="/img/favicon.png" rel="icon" />
+ 	<link rel="alternate" title="runningmaster's githublog" href="/feed.xml" type="application/atom+xml">
+ 	<!--
+ 	<link rel="stylesheet" type="text/css" href="/css/highlight.css" />
+ 	-->
+ 	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31528830-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>  
+</head>
+
+<body>
+	<a href="http://runningmaster.github.com/" title="Home" id="img_logo"></a>
+	<a href="http://github.com/runningmaster/" title="Fork me on GitHub" id="img_fork"></a>
+	<a href="/feed.xml" title="Feed" id="img_feed"></a>
+	<a href="mailto:runningmaster@gmail.com" title="Mail" id="img_mail"></a>
+ 	<div class="site">
+		<div class="menu">
+			<a href=".">home</a> | 
+			<a href="./about.html">about</a>
+		</div>
+		<div id="home">
+			
+			<div class="title"> 
+				2012-06-26
+			</div>
+			<h1>Sublime Text 2 как редактор для Go</h1>
+			<div id="post">
+				<p>Установка плагина <a href="https://github.com/DisposaBoy/GoSublime">GoSublime</a> в текстовый редактор <a href="http://www.sublimetext.com/2">Sublime Text 2</a> позволяет наделить последний некоторыми полезными IDE-подобными функциями, как-то:</p>
+
+<ul>
+<li>автозавершение кода (это делает <a href="https://github.com/nsf/gocode">Gocode</a>)</li>
+<li>переход к определению функции в исходном коде пакета (это делает <a href="https://github.com/DisposaBoy/MarGo">MarGo</a>)</li>
+<li>показ документации к функции</li>
+<li>список объявлений</li>
+<li>отображение мест ошибок</li>
+<li>автоформатирование кода при сохранении</li>
+<li>выполнение кода</li>
+<li>и прочая, прочая</li>
+</ul>
+
+<pre>
+$ go get -u github.com/nsf/gocode
+$ go get -u github.com/DisposaBoy/MarGo
+$ cd ~/.config/sublime-text-2/Packages
+$ git clone git://github.com/DisposaBoy/GoSublime
+</pre>
+
+<p>Эх, еще бы добавить в редактор <code>virtual space</code> (<a href="http://www.sublimetext.com/forum/viewtopic.php?f=4&amp;t=805&amp;start=10#p25827">обещают в 3 версии</a>), без которого мне совсем плохо (привычка, выработанная тремя пятилетками в редакторе Delphi)&hellip;</p>
+
+			</div>
+			
+			<h1>Комментарии</h1>
+			<div id="disqus_thread"></div>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    var disqus_shortname = 'runningmastersgithublog';
+			    var disqus_developer = 0;
+			    var disqus_identifier = 'go-sublime';
+			    var disqus_url = 'http://runningmaster.github.com/go-sublime.html';
+			    var disqus_script = 'embed.js';
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<div class="post_footer">
+				<a href="http://disqus.com">Powered by Disqus</a>
+			</div>
+			
+			<div class="footer">
+				<div class="contact">
+					&copy; 2012
+					<a href="mailto:runningmaster@gmail.com" title="Написать письмо">Dmitriy Kovalenko</a> | <a href="/feed.xml" rel="subscribe-rss" title="Подписаться через RSS">RSS</a> | <a href="http://github.com/runningmaster/runningmaster.github.com/blob/master/src/main.go" title="Посмотреть код">Made on Go</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>

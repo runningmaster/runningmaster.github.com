@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-06-25T15:46:11+03:00</updated>
+<updated>2012-06-26T00:20:17+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -11,6 +11,35 @@
 <id>http://runningmaster.github.com/</id>
 
 
+
+<entry>
+	<title>Sublime Text 2 как редактор для Go</title>
+	<link href="http://runningmaster.github.com/go-sublime.html"/>
+	<id>http://runningmaster.github.com/go-sublime</id>
+	<updated>2012-06-26T00:00:00</updated>
+	<content type="html"><![CDATA[<p>Установка плагина <a href="https://github.com/DisposaBoy/GoSublime">GoSublime</a> в текстовый редактор <a href="http://www.sublimetext.com/2">Sublime Text 2</a> позволяет наделить последний некоторыми полезными IDE-подобными функциями, как-то:</p>
+
+<ul>
+<li>автозавершение кода (это делает <a href="https://github.com/nsf/gocode">Gocode</a>)</li>
+<li>переход к определению функции в исходном коде пакета (это делает <a href="https://github.com/DisposaBoy/MarGo">MarGo</a>)</li>
+<li>показ документации к функции</li>
+<li>список объявлений</li>
+<li>отображение мест ошибок</li>
+<li>автоформатирование кода при сохранении</li>
+<li>выполнение кода</li>
+<li>и прочая, прочая</li>
+</ul>
+
+<pre>
+$ go get -u github.com/nsf/gocode
+$ go get -u github.com/DisposaBoy/MarGo
+$ cd ~/.config/sublime-text-2/Packages
+$ git clone git://github.com/DisposaBoy/GoSublime
+</pre>
+
+<p>Эх, еще бы добавить в редактор <code>virtual space</code> (<a href="http://www.sublimetext.com/forum/viewtopic.php?f=4&amp;t=805&amp;start=10#p25827">обещают в 3 версии</a>), без которого мне совсем плохо (привычка, выработанная тремя пятилетками в редакторе Delphi)&hellip;</p>
+]]></content>
+</entry>
 
 <entry>
 	<title>Полезные ссылки для изучения Go</title>
