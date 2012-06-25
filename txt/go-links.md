@@ -33,8 +33,10 @@
 * [Programming in Go: Creating Applications for the 21st Century (Developer's Library)](http://www.amazon.com/Programming-Go-Creating-Applications-Developers/dp/0321774639)
 * [The Go Programming Language Phrasebook (Developer's Library)](http://www.amazon.com/Programming-Language-Phrasebook-Developers-Library/dp/0321817141)
 
-## Статьи
+## Статьи и презентации
 * [Материал из Википедии](http://ru.wikipedia.org/wiki/Golang)
+* **new** [10 things you (probably) don't know about Go](http://nf.wh3rd.net/10things/#1) 22.06.2012
+* **new** [A Tour of Go](http://research.swtch.com/gotour) 21.06.2012
 * [Язык Google Go: что говорят те, кто с ним работал?](http://blogerator.ru/page/jazyk-google-go-http-go-ru-chto-govorjat-te-kto-s-nim-rabotal) 27.05.2012
 * [Написание web-приложений на языке Go](http://netsago.org/ru/docs/print/1/17) 14.04.2011
 * [ЯП Go: Часть 1. Краткий обзор и основы программирования.](http://www.ibm.com/developerworks/ru/library/l-go_01/) 28.06.2011
