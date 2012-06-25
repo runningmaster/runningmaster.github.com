@@ -1,5 +1,11 @@
 [
 	{
+		"Name": "Haunts - игра, написанная на Go",
+		"Date": "2012-06-25",
+		"File": "go-haunts"
+	},	
+
+	{
 		"Name": "Указ Петра I",
 		"Date": "2012-06-22",
 		"File": "off-decree-peter"

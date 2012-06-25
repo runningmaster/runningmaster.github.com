@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-06-25T14:24:45+03:00</updated>
+<updated>2012-06-25T15:04:40+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -11,6 +11,22 @@
 <id>http://runningmaster.github.com/</id>
 
 
+
+<entry>
+	<title>Haunts - игра, написанная на Go</title>
+	<link href="http://runningmaster.github.com/go-haunts.html"/>
+	<id>http://runningmaster.github.com/go-haunts</id>
+	<updated>2012-06-25T00:00:00</updated>
+	<content type="html"><![CDATA[<p>Игру начали делать в декабре 2011 года, издать планируют в октябре 2012.</p>
+
+<ul>
+<li><a href="http://www.kickstarter.com/projects/2066438441/haunts-the-manse-macabre">Страница</a> игры на Kickstarter.</li>
+<li><a href="http://www.mobrulesgames.com/haunts/">Страница</a> на сайте издателя Mob Rules Games.</li>
+<li><a href="https://github.com/runningwild/haunts">Исходный код</a> на GitHub.</li>
+<li><a href="http://www.youtube.com/watch?v=ZR9TYqlyh58">Видео</a> с элементами геймплея на YouTube.</li>
+</ul>
+]]></content>
+</entry>
 
 <entry>
 	<title>Указ Петра I</title>
