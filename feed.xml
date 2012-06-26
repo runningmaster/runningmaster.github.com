@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-06-26T11:41:05+03:00</updated>
+<updated>2012-06-26T13:14:25+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -13,50 +13,10 @@
 
 
 <entry>
-	<title>Принцип №1</title>
-	<link href="http://runningmaster.github.com/off-principle-one.html"/>
-	<id>http://runningmaster.github.com/off-principle-one</id>
-	<updated>2012-06-26T00:00:00</updated>
-	<content type="html"><![CDATA[<p><strong>В качестве универсального принципа, руководящего работой мышления и творчества, остается лишь тенденция к поискам возможно более простых решений.</strong></p>
-
-<p>Письмо академика <a href="http://ru.wikipedia.org/wiki/%D0%90._%D0%9D._%D0%9A%D0%BE%D0%BB%D0%BC%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B2">А. Н. Колмогорова</a> от 27 августа 1963 г. <a href="http://www.psychology-online.net/link.php?id=142">полностью</a>.</p>
-]]></content>
-</entry>
-
-<entry>
-	<title>Sublime Text 2 как редактор для Go</title>
-	<link href="http://runningmaster.github.com/go-sublime.html"/>
-	<id>http://runningmaster.github.com/go-sublime</id>
-	<updated>2012-06-26T00:00:00</updated>
-	<content type="html"><![CDATA[<p>Установка плагина <a href="https://github.com/DisposaBoy/GoSublime">GoSublime</a> в текстовый редактор <a href="http://www.sublimetext.com/2">Sublime Text 2</a> позволяет наделить последний некоторыми полезными IDE-подобными функциями, как-то:</p>
-
-<ul>
-<li>автозавершение кода (это делает <a href="https://github.com/nsf/gocode">Gocode</a>)</li>
-<li>переход к определению функции в исходном коде пакета (это делает <a href="https://github.com/DisposaBoy/MarGo">MarGo</a>)</li>
-<li>показ документации к функции</li>
-<li>список объявлений</li>
-<li>отображение мест ошибок</li>
-<li>автоформатирование кода при сохранении</li>
-<li>выполнение кода</li>
-<li>и прочая, прочая</li>
-</ul>
-
-<pre>
-$ go get -u github.com/nsf/gocode
-$ go get -u github.com/DisposaBoy/MarGo
-$ cd ~/.config/sublime-text-2/Packages
-$ git clone git://github.com/DisposaBoy/GoSublime
-</pre>
-
-<p>Эх, еще бы добавить в редактор <code>virtual space</code> (<a href="http://www.sublimetext.com/forum/viewtopic.php?f=4&amp;t=805&amp;start=10#p25827">обещают в 3 версии</a>), без которого мне совсем плохо (привычка, выработанная тремя пятилетками в редакторе Delphi)&hellip;</p>
-]]></content>
-</entry>
-
-<entry>
 	<title>Полезные ссылки для изучения Go</title>
 	<link href="http://runningmaster.github.com/go-links.html"/>
 	<id>http://runningmaster.github.com/go-links</id>
-	<updated>2012-06-25T00:00:00</updated>
+	<updated>2012-06-26T00:00:00</updated>
 	<content type="html"><![CDATA[<p>Складываю в одно место ссылки, которые пригодятся в деле освоения этого языка или же освежения памяти по нему.</p>
 
 <h2>Официально</h2>
@@ -106,10 +66,11 @@ $ git clone git://github.com/DisposaBoy/GoSublime
 
 <ul>
 <li><a href="http://ru.wikipedia.org/wiki/Golang">Материал из Википедии</a></li>
-<li><strong>new</strong> <a href="http://nf.wh3rd.net/10things/#1">Andrew Gerrand: 10 things you (probably) don&rsquo;t know about Go</a> 22.06.2012</li>
-<li><strong>new</strong> <a href="http://research.swtch.com/gotour">Russ Cox: A Tour of Go</a> 21.06.2012</li>
+<li><strong>new</strong> <a href="http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html">Rob Pike: Less is exponentially more</a> 25.06.2012</li>
+<li><a href="http://nf.wh3rd.net/10things/#1">Andrew Gerrand: 10 things you (probably) don&rsquo;t know about Go</a> 22.06.2012</li>
+<li><a href="http://research.swtch.com/gotour">Russ Cox: A Tour of Go</a> 21.06.2012</li>
 <li><a href="http://blogerator.ru/page/jazyk-google-go-http-go-ru-chto-govorjat-te-kto-s-nim-rabotal">Язык Google Go: что говорят те, кто с ним работал?</a> 27.05.2012</li>
-<li><strong>new</strong> <a href="http://concur.rspace.googlecode.com/hg/talk/concur.html">Rob Pike: Concurrency is not Parallelism</a> 13.04.2012</li>
+<li><a href="http://concur.rspace.googlecode.com/hg/talk/concur.html">Rob Pike: Concurrency is not Parallelism</a> 13.04.2012</li>
 <li><a href="http://netsago.org/ru/docs/print/1/17">Написание web-приложений на языке Go</a> 14.04.2011</li>
 <li><a href="http://www.ibm.com/developerworks/ru/library/l-go_01/">ЯП Go: Часть 1. Краткий обзор и основы программирования.</a> 28.06.2011</li>
 <li><a href="http://www.ibm.com/developerworks/ru/library/l-go_02/">ЯП Go: Часть 2. Разработка Web-приложений.</a> 30.06.2011</li>
@@ -118,6 +79,46 @@ $ git clone git://github.com/DisposaBoy/GoSublime
 <li><a href="http://netsago.org/ru/docs/print/1/16">Go для программистов C++</a> 29.09.2010</li>
 <li><a href="http://eao197.narod.ru/desc/short_effective_go.html">Краткий пересказ Effective Go на русском языке</a> 19.11.2009</li>
 </ul>
+]]></content>
+</entry>
+
+<entry>
+	<title>Принцип №1</title>
+	<link href="http://runningmaster.github.com/off-principle-one.html"/>
+	<id>http://runningmaster.github.com/off-principle-one</id>
+	<updated>2012-06-26T00:00:00</updated>
+	<content type="html"><![CDATA[<p><strong>В качестве универсального принципа, руководящего работой мышления и творчества, остается лишь тенденция к поискам возможно более простых решений.</strong></p>
+
+<p>Письмо академика <a href="http://ru.wikipedia.org/wiki/%D0%90._%D0%9D._%D0%9A%D0%BE%D0%BB%D0%BC%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B2">А. Н. Колмогорова</a> от 27 августа 1963 г. <a href="http://www.psychology-online.net/link.php?id=142">полностью</a>.</p>
+]]></content>
+</entry>
+
+<entry>
+	<title>Sublime Text 2 как редактор для Go</title>
+	<link href="http://runningmaster.github.com/go-sublime.html"/>
+	<id>http://runningmaster.github.com/go-sublime</id>
+	<updated>2012-06-26T00:00:00</updated>
+	<content type="html"><![CDATA[<p>Установка плагина <a href="https://github.com/DisposaBoy/GoSublime">GoSublime</a> в текстовый редактор <a href="http://www.sublimetext.com/2">Sublime Text 2</a> позволяет наделить последний некоторыми полезными IDE-подобными функциями, как-то:</p>
+
+<ul>
+<li>автозавершение кода (это делает <a href="https://github.com/nsf/gocode">Gocode</a>)</li>
+<li>переход к определению функции в исходном коде пакета (это делает <a href="https://github.com/DisposaBoy/MarGo">MarGo</a>)</li>
+<li>показ документации к функции</li>
+<li>список объявлений</li>
+<li>отображение мест ошибок</li>
+<li>автоформатирование кода при сохранении</li>
+<li>выполнение кода</li>
+<li>и прочая, прочая</li>
+</ul>
+
+<pre>
+$ go get -u github.com/nsf/gocode
+$ go get -u github.com/DisposaBoy/MarGo
+$ cd ~/.config/sublime-text-2/Packages
+$ git clone git://github.com/DisposaBoy/GoSublime
+</pre>
+
+<p>Эх, еще бы добавить в редактор <code>virtual space</code> (<a href="http://www.sublimetext.com/forum/viewtopic.php?f=4&amp;t=805&amp;start=10#p25827">обещают в 3 версии</a>), без которого мне совсем плохо (привычка, выработанная тремя пятилетками в редакторе Delphi)&hellip;</p>
 ]]></content>
 </entry>
 

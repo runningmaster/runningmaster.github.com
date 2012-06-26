@@ -35,10 +35,11 @@
 
 ## Статьи и презентации
 * [Материал из Википедии](http://ru.wikipedia.org/wiki/Golang)
-* **new** [Andrew Gerrand: 10 things you (probably) don't know about Go](http://nf.wh3rd.net/10things/#1) 22.06.2012
-* **new** [Russ Cox: A Tour of Go](http://research.swtch.com/gotour) 21.06.2012
+* **new** [Rob Pike: Less is exponentially more](http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html) 25.06.2012
+* [Andrew Gerrand: 10 things you (probably) don't know about Go](http://nf.wh3rd.net/10things/#1) 22.06.2012
+* [Russ Cox: A Tour of Go](http://research.swtch.com/gotour) 21.06.2012
 * [Язык Google Go: что говорят те, кто с ним работал?](http://blogerator.ru/page/jazyk-google-go-http-go-ru-chto-govorjat-te-kto-s-nim-rabotal) 27.05.2012
-* **new** [Rob Pike: Concurrency is not Parallelism](http://concur.rspace.googlecode.com/hg/talk/concur.html) 13.04.2012 
+* [Rob Pike: Concurrency is not Parallelism](http://concur.rspace.googlecode.com/hg/talk/concur.html) 13.04.2012 
 * [Написание web-приложений на языке Go](http://netsago.org/ru/docs/print/1/17) 14.04.2011
 * [ЯП Go: Часть 1. Краткий обзор и основы программирования.](http://www.ibm.com/developerworks/ru/library/l-go_01/) 28.06.2011
 * [ЯП Go: Часть 2. Разработка Web-приложений.](http://www.ibm.com/developerworks/ru/library/l-go_02/) 30.06.2011

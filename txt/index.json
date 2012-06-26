@@ -1,5 +1,11 @@
 [
 	{
+		"Name": "Полезные ссылки для изучения Go",
+		"Date": "2012-06-26",
+		"File": "go-links"
+	},
+
+	{
 		"Name": "Принцип №1",
 		"Date": "2012-06-26",
 		"File": "off-principle-one"
@@ -9,12 +15,6 @@
 		"Name": "Sublime Text 2 как редактор для Go",
 		"Date": "2012-06-26",
 		"File": "go-sublime"
-	},
-
-	{
-		"Name": "Полезные ссылки для изучения Go",
-		"Date": "2012-06-25",
-		"File": "go-links"
 	},
 
 	{
