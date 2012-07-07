@@ -21,6 +21,7 @@
 * [Go on Pastebin.com](http://pastebin.com/archive/go)
 
 ## Ресурсы
+* **new** [Go Continuous Integration](http://goci.me/)
 * [GoPkgDoc for Go packages on Bitbucket, Github, Launchpad and Google Project Hosting.](http://go.pkgdoc.org/)
 * [Go Projects](http://godashboard.appspot.com/) (завораживает)
 * [Go Language Resources](http://go-lang.cat-v.org/)
@@ -35,7 +36,8 @@
 
 ## Статьи и презентации
 * [Материал из Википедии](http://ru.wikipedia.org/wiki/Golang)
-* **new** [Rob Pike: Less is exponentially more](http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html) 25.06.2012
+* **new** [Go on I/O 2012 (4 video)](http://www.arethegovideosupyet.com/) 29.06.2012
+* [Rob Pike: Less is exponentially more](http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html) 25.06.2012
 * [Andrew Gerrand: 10 things you (probably) don't know about Go](http://nf.wh3rd.net/10things/#1) 22.06.2012
 * [Russ Cox: A Tour of Go](http://research.swtch.com/gotour) 21.06.2012
 * [Язык Google Go: что говорят те, кто с ним работал?](http://blogerator.ru/page/jazyk-google-go-http-go-ru-chto-govorjat-te-kto-s-nim-rabotal) 27.05.2012
