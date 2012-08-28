@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-07-07T13:19:18+03:00</updated>
+<updated>2012-08-28T14:50:31+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -11,6 +11,86 @@
 <id>http://runningmaster.github.com/</id>
 
 
+
+<entry>
+	<title>Полезные ссылки для изучения Go</title>
+	<link href="http://runningmaster.github.com/go-links.html"/>
+	<id>http://runningmaster.github.com/go-links</id>
+	<updated>2012-08-28T00:00:00</updated>
+	<content type="html"><![CDATA[<p>Складываю в одно место ссылки, которые пригодятся в деле освоения этого языка или же освежения памяти по нему.</p>
+
+<p>История изменения этого файла <a href="https://github.com/runningmaster/runningmaster.github.com/commits/master/txt/go-links.md">здесь</a>.</p>
+
+<h2>Официально</h2>
+
+<ul>
+<li><a href="http://golang.org/">The Go Programming Language</a></li>
+<li><a href="http://blog.golang.org/">The Go Programming Language Blog</a></li>
+<li><a href="https://plus.google.com/u/0/101406623878176903605/posts">The Go Programming Language +1</a></li>
+<li><a href="https://groups.google.com/forum/?fromgroups#!forum/golang-nuts">The Go Programming Language Group (general discussion list)</a></li>
+<li><a href="https://groups.google.com/forum/#!forum/golang-announce">The Go Programming Language Group (announcements)</a></li>
+<li><a href="https://groups.google.com/forum/?fromgroups#!forum/golang-dev">The Go Programming Language Group (development)</a></li>
+<li><a href="http://code.google.com/p/go-wiki/w/list">Go Language Community Wiki</a></li>
+<li><a href="http://play.golang.org/">Go Playground</a></li>
+</ul>
+
+<h2>Фильтры</h2>
+
+<ul>
+<li><a href="http://habrahabr.ru/hub/go/posts/">Go on Habrahabr.ru</a></li>
+<li><a href="http://twitter.com/#!/go_nuts">Go on Twitter.com</a></li>
+<li><a href="http://www.reddit.com/r/golang/">Go on Reddit.com</a></li>
+<li><a href="http://stackoverflow.com/questions/tagged/go">Go on Stackoverflow.com</a></li>
+<li><a href="https://github.com/languages/Go">Go on Github.com</a></li>
+<li><a href="http://pastebin.com/archive/go">Go on Pastebin.com</a></li>
+<li><a href="http://www.drdobbs.com/sitesearch?sort=publishDate+desc&amp;queryText=Go&amp;type=site">Go on Dr.Dobb&rsquo;s</a></li>
+</ul>
+
+<h2>Ресурсы</h2>
+
+<ul>
+<li><a href="http://goci.me/">Go Continuous Integration</a></li>
+<li><a href="http://go.pkgdoc.org/">GoPkgDoc for Go packages on Bitbucket, Github, Launchpad and Google Project Hosting.</a></li>
+<li><a href="http://godashboard.appspot.com/">Go Projects</a></li>
+<li><a href="http://go-lang.cat-v.org/">Go Language Resources</a></li>
+<li><a href="http://golangtutorials.blogspot.com/2011/05/table-of-contents.html">GoLang Tutorials</a></li>
+</ul>
+
+<h2>Книги</h2>
+
+<ul>
+<li><a href="http://thestandardlibrary.com/go.html">Go, The Standard Library</a></li>
+<li><a href="http://manning.com/shaw/">Go in Action</a></li>
+<li><a href="http://www.miek.nl/projects/learninggo/index.html">Learning Go</a> (free, donate)</li>
+<li><a href="http://jan.newmarch.name/golang/">Network programming with Go</a> (free, donate)</li>
+<li><a href="http://www.amazon.com/The-Way-To-Introduction-Programming/dp/1469769166/">The Way to Go: A Thorough Introduction to the Go Programming Language</a></li>
+<li><a href="http://www.amazon.com/Programming-Go-Creating-Applications-Developers/dp/0321774639">Programming in Go: Creating Applications for the 21st Century (Developer&rsquo;s Library)</a></li>
+<li><a href="http://www.amazon.com/Programming-Language-Phrasebook-Developers-Library/dp/0321817141">The Go Programming Language Phrasebook (Developer&rsquo;s Library)</a></li>
+</ul>
+
+<h2>Статьи и презентации</h2>
+
+<ul>
+<li><a href="http://ru.wikipedia.org/wiki/Golang">Материал из Википедии</a></li>
+<li><a href="http://verboselogging.com/">Verbose Logging</a> (статьи в блоге)</li>
+<li><a href="http://shadynasty.biz/">Shadynasty Business</a> (статьи в блоге)</li>
+<li><a href="https://www.youtube.com/watch?feature=player_embedded&amp;v=2KmHtgtEZ1s">Get Started with Go (Andrew Gerrand)</a> 01.08.2012</li>
+<li><a href="http://www.arethegovideosupyet.com/">Go on I/O 2012 (4 video)</a> 29.06.2012</li>
+<li><a href="http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html">Less is exponentially more (Rob Pike)</a> 25.06.2012</li>
+<li><a href="http://nf.wh3rd.net/10things/#1">10 things you (probably) don&rsquo;t know about Go (Andrew Gerrand)</a> 22.06.2012</li>
+<li><a href="http://research.swtch.com/gotour">A Tour of Go (Russ Cox)</a> 21.06.2012</li>
+<li><a href="http://blogerator.ru/page/jazyk-google-go-http-go-ru-chto-govorjat-te-kto-s-nim-rabotal">Язык Google Go: что говорят те, кто с ним работал?</a> 27.05.2012</li>
+<li><a href="http://concur.rspace.googlecode.com/hg/talk/concur.html">Concurrency is not Parallelism (Rob Pike)</a> 11.01.2012</li>
+<li><a href="http://netsago.org/ru/docs/print/1/17">Написание web-приложений на языке Go</a> 14.04.2011</li>
+<li><a href="http://www.ibm.com/developerworks/ru/library/l-go_01/">ЯП Go: Часть 1. Краткий обзор и основы программирования.</a> 28.06.2011</li>
+<li><a href="http://www.ibm.com/developerworks/ru/library/l-go_02/">ЯП Go: Часть 2. Разработка Web-приложений.</a> 30.06.2011</li>
+<li><a href="http://www.ibm.com/developerworks/ru/library/l-go_03/">ЯП Go: Часть 3. Работа с базами данных.</a> 30.06.2011</li>
+<li><a href="http://www.ibm.com/developerworks/ru/library/l-go_04/">ЯП Go: Часть 4. Создание GUI-приложений</a> 05.07.2011</li>
+<li><a href="http://netsago.org/ru/docs/print/1/16">Go для программистов C++</a> 29.09.2010</li>
+<li><a href="http://eao197.narod.ru/desc/short_effective_go.html">Краткий пересказ Effective Go на русском языке</a> 19.11.2009</li>
+</ul>
+]]></content>
+</entry>
 
 <entry>
 	<title>Google I/O 2012 & Go</title>
@@ -28,14 +108,6 @@
 
 <p><a href="http://www.arethegovideosupyet.com/">Доступно видео всех событий на одной странице</a>.</p>
 ]]></content>
-</entry>
-
-<entry>
-	<title>Полезные ссылки для изучения Go</title>
-	<link href="http://runningmaster.github.com/go-links.html"/>
-	<id>http://runningmaster.github.com/go-links</id>
-	<updated>2012-07-07T00:00:00</updated>
-	<content type="html"><![CDATA[]]></content>
 </entry>
 
 <entry>
