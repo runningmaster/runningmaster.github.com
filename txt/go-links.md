@@ -31,6 +31,7 @@
 * [GoLang Tutorials](http://golangtutorials.blogspot.com/2011/05/table-of-contents.html)
 
 ## Книги
+* [Let's learn Go!](http://go-book.appspot.com/) (online)
 * [Go, The Standard Library](http://thestandardlibrary.com/go.html)
 * [Go in Action](http://manning.com/shaw/)
 * [Learning Go](http://www.miek.nl/projects/learninggo/index.html) (free, donate)
@@ -57,3 +58,4 @@
 * [ЯП Go: Часть 4. Создание GUI-приложений](http://www.ibm.com/developerworks/ru/library/l-go_04/) 05.07.2011
 * [Go для программистов C++](http://netsago.org/ru/docs/print/1/16) 29.09.2010
 * [Краткий пересказ Effective Go на русском языке](http://eao197.narod.ru/desc/short_effective_go.html) 19.11.2009
+* [Go Course Day 1](http://go.googlecode.com/hg-history/release-branch.r60/doc/GoCourseDay1.pdf) [Go Course Day 2](http://go.googlecode.com/hg-history/release-branch.r60/doc/GoCourseDay2.pdf) [Go Course Day 3](http://go.googlecode.com/hg-history/release-branch.r60/doc/GoCourseDay3.pdf) (pdf)
