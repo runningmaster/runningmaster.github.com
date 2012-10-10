@@ -48,10 +48,8 @@
 * [Материал из Википедии](http://ru.wikipedia.org/wiki/Golang)
 * [Verbose Logging](http://verboselogging.com/) (статьи в блоге)
 * [Go with confidence](http://gowithconfidence.tumblr.com/) (статьи в блоге)
-* [Writing your first Google Drive App in Go](https://www.youtube.com/watch?feature=player_embedded&v=iyjqL7ZqHfg) 24.09.2012
 * [Shadynasty Business](http://shadynasty.biz/) (статьи в блоге)
-* [Get Started with Go (Andrew Gerrand)](https://www.youtube.com/watch?feature=player_embedded&v=2KmHtgtEZ1s) 01.08.2012
-* [Go on I/O 2012 (4 video)](http://www.arethegovideosupyet.com/) 29.06.2012
+* [The case for Go](https://gist.github.com/3731476)
 * [Less is exponentially more (Rob Pike)](http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html) 25.06.2012
 * [10 things you (probably) don't know about Go (Andrew Gerrand)](http://nf.wh3rd.net/10things/#1) 22.06.2012
 * [A Tour of Go (Russ Cox)](http://research.swtch.com/gotour) 21.06.2012
@@ -65,3 +63,9 @@
 * [ЯП Go: Часть 4. Создание GUI-приложений](http://www.ibm.com/developerworks/ru/library/l-go_04/) 05.07.2011
 * [Go для программистов C++](http://netsago.org/ru/docs/print/1/16) 29.09.2010
 * [Краткий пересказ Effective Go на русском языке](http://eao197.narod.ru/desc/short_effective_go.html) 19.11.2009
+
+## Видео
+* [Airbnb: Tech Talk (Brad Fitzpatrick)](https://www.youtube.com/watch?feature=player_detailpage&v=GHaXN8G10fI) 26.09.2012
+* [Writing your first Google Drive App in Go](https://www.youtube.com/watch?feature=player_embedded&v=iyjqL7ZqHfg) 24.09.2012
+* [Get Started with Go (Andrew Gerrand)](https://www.youtube.com/watch?feature=player_embedded&v=2KmHtgtEZ1s) 01.08.2012
+* [Go on I/O 2012 (4 video)](http://www.arethegovideosupyet.com/) 29.06.2012
