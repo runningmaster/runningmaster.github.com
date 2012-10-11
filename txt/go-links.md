@@ -5,7 +5,6 @@
 **Go Course (pdf): [Day 1](http://go.googlecode.com/hg-history/release-branch.r60/doc/GoCourseDay1.pdf) [Day 2](http://go.googlecode.com/hg-history/release-branch.r60/doc/GoCourseDay2.pdf) [Day 3](http://go.googlecode.com/hg-history/release-branch.r60/doc/GoCourseDay3.pdf)**
 
 ## Официально
-
 * [The Go Programming Language](http://golang.org/)
 * [The Go Programming Language Blog](http://blog.golang.org/)
 * [The Go Programming Language +1](https://plus.google.com/u/0/101406623878176903605/posts)
@@ -17,7 +16,6 @@
 * [Go Playground](http://play.golang.org/)
 
 ## Фильтры
-
 * [Go on Habrahabr.ru](http://habrahabr.ru/hub/go/posts/)
 * [Go on Twitter.com](http://twitter.com/#!/go_nuts)
 * [Go on Reddit.com](http://www.reddit.com/r/golang/)
@@ -32,6 +30,8 @@
 * [Go Projects](http://godashboard.appspot.com/)
 * [Go Language Resources](http://go-lang.cat-v.org/)
 * [GoLang Tutorials](http://golangtutorials.blogspot.com/2011/05/table-of-contents.html)
+* [Go by Example](https://gobyexample.com/)
+* [Go snippets](http://gosnip.posterous.com/)
 
 ## Книги
 * [An Introduction to Programming in Go](http://www.golang-book.com/)
@@ -47,6 +47,7 @@
 ## Статьи и презентации
 * [Материал из Википедии](http://ru.wikipedia.org/wiki/Golang)
 * [Verbose Logging](http://verboselogging.com/) (статьи в блоге)
+* [STAT HAT](http://blog.stathat.com/) (статьи в блоге)
 * [Go with confidence](http://gowithconfidence.tumblr.com/) (статьи в блоге)
 * [Shadynasty Business](http://shadynasty.biz/) (статьи в блоге)
 * [The case for Go](https://gist.github.com/3731476)
@@ -65,6 +66,7 @@
 * [Краткий пересказ Effective Go на русском языке](http://eao197.narod.ru/desc/short_effective_go.html) 19.11.2009
 
 ## Видео
+* [Rob Pike - "Concurrency Is Not Parallelism"](http://vimeo.com/groups/waza2012/videos/49718712)
 * [Airbnb: Tech Talk (Brad Fitzpatrick)](https://www.youtube.com/watch?feature=player_detailpage&v=GHaXN8G10fI) 26.09.2012
 * [Writing your first Google Drive App in Go](https://www.youtube.com/watch?feature=player_embedded&v=iyjqL7ZqHfg) 24.09.2012
 * [Get Started with Go (Andrew Gerrand)](https://www.youtube.com/watch?feature=player_embedded&v=2KmHtgtEZ1s) 01.08.2012
