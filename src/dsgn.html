@@ -3,7 +3,7 @@
 
 <head>
  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
- 	<title>{{.Site}}{{if not .Index}} : {{.Post.Name}}{{end}}</title>
+ 	<title>{{.Site}}{{if not .Home}} : {{.Post.Name}}{{end}}</title>
  	<link rel="stylesheet" href="./src/dsgn.css" type="text/css" media="screen, projection" />
  	<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" />
  	<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" />
@@ -35,9 +35,9 @@
 			<a href="./about.html">about</a>
 		</div>
 		<div id="home">
-			{{if .Index}}
+			{{if .Home}}
 			<div class="title">
-				Простое лучше, чем сложное / Сложное лучше, чем запутанное. 
+				{{.Home}}
 			</div>
 			<ul class="posts">
 				{{range .Posts}}{{if .Date}}
