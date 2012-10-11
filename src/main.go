@@ -153,10 +153,15 @@ func createPostPage(post *Post, c chan<- string) {
 	c <- "createPostPage done " + post.File
 }
 
+func timeTrack(start time.Time) {
+	elapsed := time.Since(start)
+	fmt.Printf("Elapsed time %s\n", elapsed)
+}
+
 func main() {
+	defer timeTrack(time.Now())
 	fmt.Println("\nElementary static blog generator\nCopyright (c) 2012 by Dmitriy Kovalenko\n")
 
-	t := time.Now()
 	posts := make(Posts, 0)
 	posts.initFromFile(filepath.Join(txt, "index.json"))
 
@@ -175,8 +180,6 @@ func main() {
 	for i := 0; i < n; i++ {
 		fmt.Println(<-c)
 	}
-
-	fmt.Printf("Elapsed time %s\n", time.Since(t))
 }
 
 func init() {
