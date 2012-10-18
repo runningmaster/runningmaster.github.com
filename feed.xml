@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-10-11T14:19:20+03:00</updated>
+<updated>2012-10-18T14:07:57+03:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -16,7 +16,7 @@
 	<title>Полезные ссылки для изучения Go</title>
 	<link href="http://runningmaster.github.com/go-links.html"/>
 	<id>http://runningmaster.github.com/go-links</id>
-	<updated>2012-10-11T00:00:00</updated>
+	<updated>2012-10-18T00:00:00</updated>
 	<content type="html"><![CDATA[<p>Складываю в одно место ссылки, которые пригодятся в деле освоения этого языка или же освежения памяти по нему.</p>
 
 <p>История изменения этого файла <a href="https://github.com/runningmaster/runningmaster.github.com/commits/master/txt/go-links.md">здесь</a>.</p>
@@ -27,6 +27,7 @@
 
 <ul>
 <li><a href="http://golang.org/">The Go Programming Language</a></li>
+<li><a href="http://talks.golang.org/">The Go Programming Language Talks</a></li>
 <li><a href="http://blog.golang.org/">The Go Programming Language Blog</a></li>
 <li><a href="https://plus.google.com/u/0/101406623878176903605/posts">The Go Programming Language +1</a></li>
 <li><a href="https://groups.google.com/forum/?fromgroups#!forum/golang-nuts">The Go Programming Language Group (general discussion list)</a></li>

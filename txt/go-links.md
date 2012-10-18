@@ -6,6 +6,7 @@
 
 ## Официально
 * [The Go Programming Language](http://golang.org/)
+* [The Go Programming Language Talks](http://talks.golang.org/)
 * [The Go Programming Language Blog](http://blog.golang.org/)
 * [The Go Programming Language +1](https://plus.google.com/u/0/101406623878176903605/posts)
 * [The Go Programming Language Group (general discussion list)](https://groups.google.com/forum/?fromgroups#!forum/golang-nuts)
