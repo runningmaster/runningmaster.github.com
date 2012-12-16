@@ -1,5 +1,11 @@
 [
 	{
+		"Name": "Обновления Go 1",
+		"Date": "2012-12-16",
+		"File": "go-ann"
+	},
+
+	{
 		"Name": "Полезные ссылки для изучения Go",
 		"Date": "2012-10-18",
 		"File": "go-links"
@@ -9,12 +15,6 @@
 		"Name": "Progress by argument",
 		"Date": "2012-10-09",
 		"File": "off-progress-by-argument"
-	},
-
-	{
-		"Name": "Обновления Go 1",
-		"Date": "2012-09-24",
-		"File": "go-ann"
 	},
 
 	{

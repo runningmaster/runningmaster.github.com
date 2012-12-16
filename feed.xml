@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-10-18T14:07:57+03:00</updated>
+<updated>2012-12-16T21:41:42+02:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -11,6 +11,40 @@
 <id>http://runningmaster.github.com/</id>
 
 
+
+<entry>
+	<title>Обновления Go 1</title>
+	<link href="http://runningmaster.github.com/go-ann.html"/>
+	<id>http://runningmaster.github.com/go-ann</id>
+	<updated>2012-12-16T00:00:00</updated>
+	<content type="html"><![CDATA[<pre>
+$ go version
+go version go1.0.3
+</pre>
+
+<p>С момента выпуска релиза Go 1 тихо и незаметно вышли уже три минорных обновления:</p>
+
+<ul>
+<li><code>go1.0.3</code> 24.09.2012 <a href="https://groups.google.com/d/msg/golang-nuts/co3SvXbGrNk/sGOmwfmBZeYJ">что нового?</a></li>
+<li><code>go1.0.2</code> 14.06.2012 <a href="https://groups.google.com/forum/#!topic/golang-announce/9-f_fnXNDzw">что нового?</a></li>
+<li><code>go1.0.1</code> 27.04.2012 <a href="https://groups.google.com/forum/#!topic/golang-announce/2ufDgIGFFTk">что нового?</a></li>
+<li><code>go1.0.0</code> 28.03.2012 <a href="http://golang.org/doc/go1.html">release notes</a></li>
+</ul>
+
+<p>Следует отметить значительный <a href="http://code.google.com/p/go/source/list">траффик</a> изменений в исходном коде проекта, как по частоте коммитов так и по их авторству.</p>
+
+<p>Установка из исходников вместе с экспериментальными пакетами:</p>
+
+<pre>
+$ sudo apt-get install mercurial
+$ hg clone https://code.google.com/p/go
+$ cd go/src
+$ ./all.bash
+$ go version
+go version devel +a70be086fe02 Sun Dec 16 11:51:47 2012 +0900 linux/amd64
+</pre>
+]]></content>
+</entry>
 
 <entry>
 	<title>Полезные ссылки для изучения Go</title>
@@ -124,29 +158,6 @@
 
 <p>По идеологическим причинам не принимают довольно часто, особенно, когда это патч, который открывает &ldquo;новое направление&rdquo; в ядре. Тут приходится попотеть и попереписываться. К компромиссу приходят одним путем - это называется &ldquo;progress by argument&rdquo;. Ты объясняешь, какой цели ты хочешь добиться и почему так, как это написано в патче. Если кто-то с тобой не согласен, он объясняет почему, и как сделать по-другому. Обычно один из вас объективно не прав, и в диалоге выясняется кто.</p>
 </blockquote>
-]]></content>
-</entry>
-
-<entry>
-	<title>Обновления Go 1</title>
-	<link href="http://runningmaster.github.com/go-ann.html"/>
-	<id>http://runningmaster.github.com/go-ann</id>
-	<updated>2012-09-24T00:00:00</updated>
-	<content type="html"><![CDATA[<pre>
-$ go version
-go version go1.0.3
-</pre>
-
-<p>С момента выпуска релиза Go 1 тихо и незаметно вышли уже три минорных обновления:</p>
-
-<ul>
-<li><code>go1.0.3</code> 24.09.2012 <a href="https://groups.google.com/d/msg/golang-nuts/co3SvXbGrNk/sGOmwfmBZeYJ">что нового?</a></li>
-<li><code>go1.0.2</code> 14.06.2012 <a href="https://groups.google.com/forum/#!topic/golang-announce/9-f_fnXNDzw">что нового?</a></li>
-<li><code>go1.0.1</code> 27.04.2012 <a href="https://groups.google.com/forum/#!topic/golang-announce/2ufDgIGFFTk">что нового?</a></li>
-<li><code>go1.0.0</code> 28.03.2012 <a href="http://golang.org/doc/go1.html">release notes</a></li>
-</ul>
-
-<p>Следует отметить значительный <a href="http://code.google.com/p/go/source/list">траффик</a> изменений в исходном коде проекта, как по частоте коммитов так и по их авторству.</p>
 ]]></content>
 </entry>
 

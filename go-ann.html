@@ -37,7 +37,7 @@
 		<div id="home">
 			
 			<div class="title"> 
-				2012-09-24
+				2012-12-16
 			</div>
 			<h1>Обновления Go 1</h1>
 			<div id="post">
@@ -56,6 +56,17 @@ go version go1.0.3
 </ul>
 
 <p>Следует отметить значительный <a href="http://code.google.com/p/go/source/list">траффик</a> изменений в исходном коде проекта, как по частоте коммитов так и по их авторству.</p>
+
+<p>Установка из исходников вместе с экспериментальными пакетами:</p>
+
+<pre>
+$ sudo apt-get install mercurial
+$ hg clone https://code.google.com/p/go
+$ cd go/src
+$ ./all.bash
+$ go version
+go version devel +a70be086fe02 Sun Dec 16 11:51:47 2012 +0900 linux/amd64
+</pre>
 
 			</div>
 			

@@ -11,3 +11,14 @@ go version go1.0.3
 * `go1.0.0` 28.03.2012 [release notes](http://golang.org/doc/go1.html)
 
 Следует отметить значительный [траффик](http://code.google.com/p/go/source/list) изменений в исходном коде проекта, как по частоте коммитов так и по их авторству.
+
+Установка из исходников вместе с экспериментальными пакетами:
+
+<pre>
+$ sudo apt-get install mercurial
+$ hg clone https://code.google.com/p/go
+$ cd go/src
+$ ./all.bash
+$ go version
+go version devel +a70be086fe02 Sun Dec 16 11:51:47 2012 +0900 linux/amd64
+</pre>
