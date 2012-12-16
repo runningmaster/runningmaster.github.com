@@ -22,3 +22,10 @@ $ ./all.bash
 $ go version
 go version devel +a70be086fe02 Sun Dec 16 11:51:47 2012 +0900 linux/amd64
 </pre>
+
+В первый раз не забыть добавить в `.profile` строки:
+
+<pre>
+export GOROOT=$HOME/Development/go
+export PATH=$PATH:$GOROOT/bin
+</pre>

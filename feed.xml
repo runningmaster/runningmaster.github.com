@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-12-16T21:41:42+02:00</updated>
+<updated>2012-12-16T21:45:17+02:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -42,6 +42,13 @@ $ cd go/src
 $ ./all.bash
 $ go version
 go version devel +a70be086fe02 Sun Dec 16 11:51:47 2012 +0900 linux/amd64
+</pre>
+
+<p>В первый раз не забыть добавить в <code>.profile</code> строки:</p>
+
+<pre>
+export GOROOT=$HOME/Development/go
+export PATH=$PATH:$GOROOT/bin
 </pre>
 ]]></content>
 </entry>
