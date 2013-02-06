@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2012-12-16T21:45:17+02:00</updated>
+<updated>2013-02-06T16:36:48+02:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -16,8 +16,11 @@
 	<title>Обновления Go 1</title>
 	<link href="http://runningmaster.github.com/go-ann.html"/>
 	<id>http://runningmaster.github.com/go-ann</id>
-	<updated>2012-12-16T00:00:00</updated>
-	<content type="html"><![CDATA[<pre>
+	<updated>2013-02-06T00:00:00</updated>
+	<content type="html"><![CDATA[<p>Началась подготовка выпуска релиза Go 1.1, кодовая база заморожена:
+<a href="http://swtch.com/~rsc/go11.html">Go 1.1: Open Issues</a></p>
+
+<pre>
 $ go version
 go version go1.0.3
 </pre>
@@ -57,7 +60,7 @@ export PATH=$PATH:$GOROOT/bin
 	<title>Полезные ссылки для изучения Go</title>
 	<link href="http://runningmaster.github.com/go-links.html"/>
 	<id>http://runningmaster.github.com/go-links</id>
-	<updated>2012-10-18T00:00:00</updated>
+	<updated>2013-02-06T00:00:00</updated>
 	<content type="html"><![CDATA[<p>Складываю в одно место ссылки, которые пригодятся в деле освоения этого языка или же освежения памяти по нему.</p>
 
 <p>История изменения этого файла <a href="https://github.com/runningmaster/runningmaster.github.com/commits/master/txt/go-links.md">здесь</a>.</p>
@@ -77,6 +80,8 @@ export PATH=$PATH:$GOROOT/bin
 <li><a href="https://groups.google.com/forum/?fromgroups#!forum/golang-dev">The Go Programming Language Group (development)</a></li>
 <li><a href="http://code.google.com/p/go-wiki/w/list">Go Language Community Wiki</a></li>
 <li><a href="http://play.golang.org/">Go Playground</a></li>
+<li><a href="http://build.golang.org/">Go Build Status</a></li>
+<li><a href="http://godoc.org/">GoDoc for Go packages on Bitbucket, Github, Launchpad and Google Project Hosting</a></li>
 </ul>
 
 <h2>Фильтры</h2>
@@ -95,7 +100,6 @@ export PATH=$PATH:$GOROOT/bin
 
 <ul>
 <li><a href="http://goci.me/">Go Continuous Integration</a></li>
-<li><a href="http://go.pkgdoc.org/">GoPkgDoc for Go packages on Bitbucket, Github, Launchpad and Google Project Hosting.</a></li>
 <li><a href="http://godashboard.appspot.com/">Go Projects</a></li>
 <li><a href="http://go-lang.cat-v.org/">Go Language Resources</a></li>
 <li><a href="http://golangtutorials.blogspot.com/2011/05/table-of-contents.html">GoLang Tutorials</a></li>
@@ -125,7 +129,14 @@ export PATH=$PATH:$GOROOT/bin
 <li><a href="http://blog.stathat.com/">STAT HAT</a> (статьи в блоге)</li>
 <li><a href="http://gowithconfidence.tumblr.com/">Go with confidence</a> (статьи в блоге)</li>
 <li><a href="http://shadynasty.biz/">Shadynasty Business</a> (статьи в блоге)</li>
+<li><a href="http://dave.cheney.net/category/golang">Dave Cheney</a> (статьи в блоге)</li>
 <li><a href="https://gist.github.com/3731476">The case for Go</a></li>
+<li><a href="https://gist.github.com/jordanorelli/4717229">Function Types in Go (golang)</a> 05.02.2013</li>
+<li><a href="http://blog.natefinch.com/2013/01/go-is-for-open-source.html">Go is for Open Source</a> 29.01.2013</li>
+<li><a href="http://dave.cheney.net/2013/01/19/what-is-the-zero-value-and-why-is-it-useful">What is the zero value, and why is it useful ?</a> 19.01.2013</li>
+<li><a href="http://dave.cheney.net/2013/01/09/go-the-language-for-emulators">Go, the language for emulators</a> 09.01.2013</li>
+<li><a href="http://blog.kowalczyk.info/article/uvw2/Thoughts-on-Go-after-writing-3-websites.html">Go for writing web servers</a></li>
+<li><a href="http://dave.cheney.net/2012/09/08/an-introduction-to-cross-compilation-with-go">An introduction to cross compilation with Go</a> 08.09.2012</li>
 <li><a href="http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html">Less is exponentially more (Rob Pike)</a> 25.06.2012</li>
 <li><a href="http://nf.wh3rd.net/10things/#1">10 things you (probably) don&rsquo;t know about Go (Andrew Gerrand)</a> 22.06.2012</li>
 <li><a href="http://research.swtch.com/gotour">A Tour of Go (Russ Cox)</a> 21.06.2012</li>
@@ -202,28 +213,7 @@ export PATH=$PATH:$GOROOT/bin
 	<link href="http://runningmaster.github.com/go-sublime.html"/>
 	<id>http://runningmaster.github.com/go-sublime</id>
 	<updated>2012-06-26T00:00:00</updated>
-	<content type="html"><![CDATA[<p>Установка плагина <a href="https://github.com/DisposaBoy/GoSublime">GoSublime</a> в текстовый редактор <a href="http://www.sublimetext.com/2">Sublime Text 2</a> позволяет наделить последний некоторыми полезными IDE-подобными функциями, как-то:</p>
-
-<ul>
-<li>автозавершение кода (это делает <a href="https://github.com/nsf/gocode">Gocode</a>)</li>
-<li>переход к определению функции в исходном коде пакета (это делает <a href="https://github.com/DisposaBoy/MarGo">MarGo</a>)</li>
-<li>показ документации к функции</li>
-<li>список объявлений</li>
-<li>отображение мест ошибок</li>
-<li>автоформатирование кода при сохранении</li>
-<li>выполнение кода</li>
-<li>и прочая, прочая</li>
-</ul>
-
-<pre>
-$ go get -u github.com/nsf/gocode
-$ go get -u github.com/DisposaBoy/MarGo
-$ cd ~/.config/sublime-text-2/Packages
-$ git clone git://github.com/DisposaBoy/GoSublime
-</pre>
-
-<p>Эх, еще бы добавить в редактор <code>virtual space</code> (<a href="http://www.sublimetext.com/forum/viewtopic.php?f=4&amp;t=805&amp;start=10#p25827">обещают в 3 версии</a>), без которого мне совсем плохо (привычка, выработанная тремя пятилетками в редакторе Delphi)&hellip;</p>
-]]></content>
+	<content type="html"><![CDATA[]]></content>
 </entry>
 
 <entry>

@@ -15,6 +15,8 @@
 * [The Go Programming Language Group (development)](https://groups.google.com/forum/?fromgroups#!forum/golang-dev)
 * [Go Language Community Wiki](http://code.google.com/p/go-wiki/w/list)
 * [Go Playground](http://play.golang.org/)
+* [Go Build Status](http://build.golang.org/)
+* [GoDoc for Go packages on Bitbucket, Github, Launchpad and Google Project Hosting](http://godoc.org/)
 
 ## Фильтры
 * [Go on Habrahabr.ru](http://habrahabr.ru/hub/go/posts/)
@@ -27,7 +29,6 @@
 
 ## Ресурсы
 * [Go Continuous Integration](http://goci.me/)
-* [GoPkgDoc for Go packages on Bitbucket, Github, Launchpad and Google Project Hosting.](http://go.pkgdoc.org/)
 * [Go Projects](http://godashboard.appspot.com/)
 * [Go Language Resources](http://go-lang.cat-v.org/)
 * [GoLang Tutorials](http://golangtutorials.blogspot.com/2011/05/table-of-contents.html)
@@ -51,7 +52,14 @@
 * [STAT HAT](http://blog.stathat.com/) (статьи в блоге)
 * [Go with confidence](http://gowithconfidence.tumblr.com/) (статьи в блоге)
 * [Shadynasty Business](http://shadynasty.biz/) (статьи в блоге)
+* [Dave Cheney](http://dave.cheney.net/category/golang) (статьи в блоге)
 * [The case for Go](https://gist.github.com/3731476)
+* [Function Types in Go (golang)](https://gist.github.com/jordanorelli/4717229) 05.02.2013
+* [Go is for Open Source](http://blog.natefinch.com/2013/01/go-is-for-open-source.html) 29.01.2013
+* [What is the zero value, and why is it useful ?](http://dave.cheney.net/2013/01/19/what-is-the-zero-value-and-why-is-it-useful) 19.01.2013
+* [Go, the language for emulators](http://dave.cheney.net/2013/01/09/go-the-language-for-emulators) 09.01.2013
+* [Go for writing web servers](http://blog.kowalczyk.info/article/uvw2/Thoughts-on-Go-after-writing-3-websites.html)
+* [An introduction to cross compilation with Go](http://dave.cheney.net/2012/09/08/an-introduction-to-cross-compilation-with-go) 08.09.2012
 * [Less is exponentially more (Rob Pike)](http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html) 25.06.2012
 * [10 things you (probably) don't know about Go (Andrew Gerrand)](http://nf.wh3rd.net/10things/#1) 22.06.2012
 * [A Tour of Go (Russ Cox)](http://research.swtch.com/gotour) 21.06.2012

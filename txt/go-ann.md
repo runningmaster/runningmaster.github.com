@@ -1,3 +1,6 @@
+Началась подготовка выпуска релиза Go 1.1, кодовая база заморожена:
+[Go 1.1: Open Issues](http://swtch.com/~rsc/go11.html)
+
 <pre>
 $ go version
 go version go1.0.3
