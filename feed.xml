@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2013-02-06T17:31:39+02:00</updated>
+<updated>2013-02-06T17:36:18+02:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -47,12 +47,23 @@ $ go version
 go version devel +a70be086fe02 Sun Dec 16 11:51:47 2012 +0900 linux/amd64
 </pre>
 
-<p>В первый раз не забыть добавить в <code>.profile</code> строки:</p>
+<p>Мой черновик настроек:</p>
 
 <pre>
+.profile
 export GOROOT=$HOME/Development/go
 export GOPATH=$HOME/Development/go-get
 export PATH=$PATH:$GOROOT/bin:$GOPATH
+
+go get -u code.google.com/p/go.talks/present
+go get -u github.com/russross/blackfriday
+go get -u github.com/garyburd/redigo/redis
+go get -u github.com/nsf/gocode
+go get -u github.com/DisposaBoy/MarGo
+
+cd ~/.config/sublime-text-2/Packages
+rm -rf GoSublime
+git clone git://github.com/DisposaBoy/GoSublime
 </pre>
 ]]></content>
 </entry>
