@@ -30,5 +30,6 @@ go version devel +a70be086fe02 Sun Dec 16 11:51:47 2012 +0900 linux/amd64
 
 <pre>
 export GOROOT=$HOME/Development/go
-export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/Development/go-get
+export PATH=$PATH:$GOROOT/bin:$GOPATH
 </pre>
