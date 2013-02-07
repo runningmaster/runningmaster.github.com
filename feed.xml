@@ -3,7 +3,7 @@
 
 <title>runningmaster's githublog</title>
 <link href="http://runningmaster.github.com/feed.xml"/>
-<updated>2013-02-06T17:36:18+02:00</updated>
+<updated>2013-02-07T11:14:56+02:00</updated>
 <author>
 	<name>Dmitriy Kovalenko</name>
 	<name>runningmaster@gmail.com</name>
@@ -53,7 +53,7 @@ go version devel +a70be086fe02 Sun Dec 16 11:51:47 2012 +0900 linux/amd64
 .profile
 export GOROOT=$HOME/Development/go
 export GOPATH=$HOME/Development/go-get
-export PATH=$PATH:$GOROOT/bin:$GOPATH
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 go get -u code.google.com/p/go.talks/present
 go get -u github.com/russross/blackfriday
