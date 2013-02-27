@@ -19,6 +19,7 @@
 * [GoDoc for Go packages on Bitbucket, Github, Launchpad and Google Project Hosting](http://godoc.org/)
 
 ## Фильтры
+* [Go weekly](http://golangweekly.com/)
 * [Go on Habrahabr.ru](http://habrahabr.ru/hub/go/posts/)
 * [Go on Twitter.com](http://twitter.com/#!/go_nuts)
 * [Go on Reddit.com](http://www.reddit.com/r/golang/)
